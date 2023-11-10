@@ -35,19 +35,32 @@ class Home:
             with col1:
                 # st.header("A cat")
                 # st.image("https://static.streamlit.io/examples/cat.jpg")
-                card(title="Hello World!", text="", image="http://placekitten.com/200/300", url="https://github.com/gamcoh/st-card")
+                # st.markdown("[![Link](https://static.streamlit.io/examples/cat.jpg)](https://example.com/new_page)")
+                st.markdown('<a href="https://example.com/new_page" style="margin:10"><img src="https://static.streamlit.io/examples/cat.jpg" width="200"></a>', unsafe_allow_html=True)
             with col2:
-                st.header("A dog")
-                st.image("https://static.streamlit.io/examples/dog.jpg")
+                # st.header("A dog")
+                # st.image("https://static.streamlit.io/examples/dog.jpg")
+                 #Image URL and the URL you want to redirect to
+                #  image_url = 'https://example.com/your_image.png'
+                #  link = 'https://example.com/new_page'
+                #  st.markdown(f'[![Link]({image_url})]({link})', unsafe_allow_html=True)
+                #  st.markdown("[![Link](https://static.streamlit.io/examples/dog.jpg)](https://example.com/new_page)")
+                 st.markdown('<a href="https://example.com/new_page"><img src="https://static.streamlit.io/examples/dog.jpg" width="200"></a>', unsafe_allow_html=True)
             with col3:
-                st.header("An owl")
-                st.image("https://static.streamlit.io/examples/owl.jpg")
+                # st.header("An owl")
+                # st.image("https://static.streamlit.io/examples/owl.jpg")
+                # st.markdown("[![Link](https://static.streamlit.io/examples/owl.jpg)](https://example.com/new_page)")
+                st.markdown('<a href="https://example.com/new_page"><img src="https://static.streamlit.io/examples/owl.jpg" width="200"></a>', unsafe_allow_html=True)
             with col4:
-                st.header("A cat")
-                st.image("https://static.streamlit.io/examples/cat.jpg")
+                # st.header("A cat")
+                # st.image("https://static.streamlit.io/examples/cat.jpg")
+                # st.markdown("[![Link](https://static.streamlit.io/examples/cat.jpg)](https://example.com/new_page)")
+                st.markdown('<a href="https://example.com/new_page"><img src="https://static.streamlit.io/examples/cat.jpg" width="200"></a>', unsafe_allow_html=True)
             with col5:
-                st.header("A cat")
-                st.image("https://static.streamlit.io/examples/cat.jpg")
+                # st.header("A cat")
+                # st.image("https://static.streamlit.io/examples/cat.jpg")
+                # st.markdown("[![Link](https://static.streamlit.io/examples/cat.jpg)](https://example.com/new_page)")
+                st.markdown('<a href="https://example.com/new_page"><img src="https://static.streamlit.io/examples/cat.jpg" width="200"></a>', unsafe_allow_html=True)
         with st.container():
             st.write("#### Advanced Level")
             col1, col2, col3, col4, col5 = st.columns(5)
