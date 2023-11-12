@@ -88,9 +88,19 @@ class HomePage:
 
 
     def health_check(self):
+        def modal_dis():
+            modal = Modal("hi",key="Demo")
+            with modal.container():
+                                    # st.write("Text goes here")
+                                    html_string = '''<h1>HTML string in RED</h1><script language="javascript">document.querySelector("h1").style.color = "red";</script>'''
+                                    components.html(html_string)
+                                    # st.write("Some fancy text")
+                                    # value = st.checkbox("Check me")
+                                    # st.write(f"Checkbox checked: {value}")
+            
         selected=option_menu(
             menu_title=None, 
-            options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
             icons=("house","book","envelope","house","book","envelope","house"),
             menu_icon="cast",
             default_index=1,
@@ -100,7 +110,7 @@ class HomePage:
             pass
         
         st.title('PHS')
-        with st.form("my_form",clear_on_submit=True):
+        with st.form("my_form"):
             st.write("Check Your Health Score")
             tempF=st.text_input("Body Temperature:")
             pulse=st.text_input("Body Pulse:")
@@ -111,9 +121,17 @@ class HomePage:
             # Every form must have a submit button.
             submitted = st.form_submit_button("Submit")
             if submitted:
-                st.write("Submitted")
-                healthFrame=pd.DataFrame([[tempF, pulse, respr, bpsys, bpdia, popct]],columns=['tempF','pulse','respr','bpsys','bpdia','popct'])
-                st.write(1)
+                if tempF and pulse and respr and bpsys and bpdia and popct:
+                    healthFrame=pd.DataFrame([[tempF, pulse, respr, bpsys, bpdia, popct]],columns=['tempF','pulse','respr','bpsys','bpdia','popct'])
+                    st.write('''<h3>Your health score is <b>1</b></h3>''',unsafe_allow_html=True)                                   
+                    st.write('''<h5 style="color:green"><i>Health status: Healthy</i><h5>''',unsafe_allow_html=True)                                   
+                else:
+                    # st.warning('Fill all fields', icon="⚠️")
+                    st.error('Fill all fields', icon="🚨")
+                # st.write("Submitted")
+                
+                # st.write(tempF)
+                # print(type(tempF))
             st.write("Live Happy ")
             
     def exercise_rec(self):
@@ -175,7 +193,7 @@ class HomePage:
             
             
 homepage=HomePage()
-homepage.health_check()
-# homepage.exercise_rec()
+# homepage.health_check()
+homepage.exercise_rec()
 # homepage.yoga()
 # homepage.welcome_scn()
