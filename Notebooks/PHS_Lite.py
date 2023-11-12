@@ -8,6 +8,7 @@ import base64
 from pathlib import Path
 from streamlit_option_menu import option_menu
 from streamlit_carousel import carousel
+import glob
 
 st.set_page_config(layout="wide")
 
@@ -198,36 +199,118 @@ class HomePage:
                 st.image(i6)
                 st.button("Leg", type="primary")        
     def exercise_rec(self):
+        with open('style2.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         
-        st.write("### Exercises for you")
-        with st.container():
-            st.write("#### Beginner Level")
-            col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='large')
-            with col1:
-                st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/cat.jpg" width="150"></a>', unsafe_allow_html=True)
-            with col2:
-                 st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/dog.jpg" width="150"></a>', unsafe_allow_html=True)
-            with col3:
-                st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/owl.jpg" width="150"></a>', unsafe_allow_html=True)
-            with col4:
-                st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/cat.jpg" width="150"></a>', unsafe_allow_html=True)
-            with col5:
-                st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/cat.jpg" width="150"></a>', unsafe_allow_html=True)
-        with st.container():
-            st.write("#### Advanced Level")
-            col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='small')
-            with col1:
-                card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b1',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
-            with col2:
-                card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b2',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
-            with col3:
-                card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b3',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
-            with col4:
-                card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
-            with col5:
-                card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
-        with st.container():
-            st.write("This is inside the container3")
+        def img_to_bytes(img_path):
+            img_bytes = Path(img_path).read_bytes()
+            encoded = base64.b64encode(img_bytes).decode()
+            return encoded
+        def img_to_html(img_path):
+            img_html = "<img src='data:image/png;base64,{}' class='img-fluid'>".format(img_to_bytes(img_path))
+            return img_html
+
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=2,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        tab1, tab2 = st.tabs(["Beginners", "Advanced"])
+        with tab1:
+            # st.header("A cat")
+            # st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
+            with st.container():
+                st.write("#### Beginners Level")
+                col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='small')
+                with col1:
+                    with col1:
+                        i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                        col1.image(i1)
+                        col1.button("b1a", type="primary")
+                    with col2:
+                        # st.write('Exercises')
+                        i2=Image.open('./media/welcome/biceps.jpg').resize((270,300))
+                        col2.image(i2)
+                        col2.button("b2a", type="primary")
+                    with col3:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col3.image(i3)
+                        col3.button("b3a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col4.image(i3)
+                        col4.button("b4a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col5.image(i3)
+                        col5.button("b5a", type="primary")
+        with tab2:
+            with st.container():
+                st.write("#### Advanced Level")
+                col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='small')
+                with col1:
+                    with col1:
+                        i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                        col1.image(i1)
+                        col1.button("a1a", type="primary")
+                    with col2:
+                        # st.write('Exercises')
+                        i2=Image.open('./media/welcome/biceps.jpg').resize((270,300))
+                        col2.image(i2)
+                        col2.button("a2a", type="primary")
+                    with col3:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col3.image(i3)
+                        col3.button("a3a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col4.image(i3)
+                        col4.button("a4a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col5.image(i3)
+                        col5.button("a5a", type="primary")
+        
+        # st.write("### Exercises for you")
+        # with st.container():
+        #     st.write("#### Beginner Level")
+        #     col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='large')
+        #     with col1:
+        #         st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/cat.jpg" width="150"></a>', unsafe_allow_html=True)
+        #     with col2:
+        #          st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/dog.jpg" width="150"></a>', unsafe_allow_html=True)
+        #     with col3:
+        #         st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/owl.jpg" width="150"></a>', unsafe_allow_html=True)
+        #     with col4:
+        #         st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/cat.jpg" width="150"></a>', unsafe_allow_html=True)
+        #     with col5:
+        #         st.markdown('<a href="https://example.com/new_page" style="margin: 10px;"><img src="https://static.streamlit.io/examples/cat.jpg" width="150"></a>', unsafe_allow_html=True)
+        # with st.container():
+        #     st.write("#### Advanced Level")
+        #     col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='small')
+        #     with col1:
+        #         card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b1',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        #     with col2:
+        #         card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b2',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        #     with col3:
+        #         card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b3',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        #     with col4:
+        #         card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        #     with col5:
+        #         card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        # with st.container():
+        #     st.write("This is inside the container3")
         pass
     
     def yoga(self):
@@ -257,7 +340,7 @@ class HomePage:
             
 homepage=HomePage()
 # homepage.health_check()
-# homepage.exercise_rec()
+homepage.exercise_rec()
 # homepage.yoga()
 # homepage.welcome_scn()
-homepage.exercise_scn()
+# homepage.exercise_scn()
