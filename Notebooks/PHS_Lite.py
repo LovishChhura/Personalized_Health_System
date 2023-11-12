@@ -312,7 +312,67 @@ class HomePage:
         # with st.container():
         #     st.write("This is inside the container3")
         pass
-    
+    def yoga_scn(self):
+        with open('style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=3,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        
+        st.title('PHS Yoga Asanas')
+        
+        # logo=Image.open('./AmmiM.png').resize((200,200))
+        # st.image(logo)
+        
+        with st.container():
+            # st.write("#### Advanced Level")
+            col1, col2,col3 = st.columns([5,5,5],gap='small')
+            # st.image("./23.png")
+            with col1:
+                # st.write('Heath Scores')
+                i1=Image.open('./media/welcome/standing pose.jpg').resize((350,400))
+                st.image(i1)
+                st.button("Standing Asanas", type="primary")
+            with col2:
+                # st.write('Exercises')
+                i2=Image.open('./media/welcome/sitting pose.jpg').resize((350,400))
+                st.image(i2)
+                st.button("Sitting Asanas", type="primary")
+            with col3:
+                # st.write('Yoga Asanass')
+                i3=Image.open('./media/welcome/laying on back pose.jpg').resize((350,400))
+                st.image(i3)
+                st.button("Laying on Back Asanas", type="primary")
+            # with col4:
+            #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+            # with col5:
+            #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        
+        with st.container():
+            # st.write("#### Advanced Level")
+            col1, col2,col3 = st.columns(3)#([5,5,5],gap='small')
+            with col1:
+                # st.write('Home Remedies')
+                i4=Image.open('./media/welcome/laying on stomach pose.jpg').resize((350,400))
+                st.image(i4)
+                st.button("Laying on Stomach Asanas", type="primary")
+            with col2:
+                # st.write('Reduce Stress')
+                i5=Image.open('./media/welcome/balancing pose.jpg').resize((350,400))
+                st.image(i5)
+                st.button("Balancing Asanas", type="primary")
+            with col3:
+                # st.write('Health Guidelines')
+                i6=Image.open('./media/welcome/eyes pose.jpg').resize((350,400))
+                st.image(i6)
+                st.button("Eyes Asanas", type="primary") 
     def yoga(self):
         with st.container():
             st.write("#### Advanced Level")
@@ -336,11 +396,125 @@ class HomePage:
             st.write("This is inside the container3")
         pass
         pass
-            
+    
+    def yoga_rec(self):
+        with open('style2.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        
+        def img_to_bytes(img_path):
+            img_bytes = Path(img_path).read_bytes()
+            encoded = base64.b64encode(img_bytes).decode()
+            return encoded
+        def img_to_html(img_path):
+            img_html = "<img src='data:image/png;base64,{}' class='img-fluid'>".format(img_to_bytes(img_path))
+            return img_html
+
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=3,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        tab1, tab2, tab3 = st.tabs(["Beginners","Intermediate", "Advanced"])
+        with tab1:
+            # st.header("A cat")
+            # st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
+            with st.container():
+                st.write("#### Beginners Level")
+                col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='small')
+                with col1:
+                    with col1:
+                        i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                        col1.image(i1)
+                        col1.button("b1a", type="primary")
+                    with col2:
+                        # st.write('Exercises')
+                        i2=Image.open('./media/welcome/biceps.jpg').resize((270,300))
+                        col2.image(i2)
+                        col2.button("b2a", type="primary")
+                    with col3:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col3.image(i3)
+                        col3.button("b3a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col4.image(i3)
+                        col4.button("b4a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col5.image(i3)
+                        col5.button("b5a", type="primary")
+        with tab2:
+            with st.container():
+                st.write("#### Intermediate Level")
+                col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='small')
+                with col1:
+                    with col1:
+                        i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                        col1.image(i1)
+                        col1.button("i1a", type="primary")
+                    with col2:
+                        # st.write('Exercises')
+                        i2=Image.open('./media/welcome/biceps.jpg').resize((270,300))
+                        col2.image(i2)
+                        col2.button("i2a", type="primary")
+                    with col3:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col3.image(i3)
+                        col3.button("i3a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col4.image(i3)
+                        col4.button("i4a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col5.image(i3)
+                        col5.button("i5a", type="primary")
+        with tab3:
+            with st.container():
+                st.write("#### Advanced Level")
+                col1, col2, col3, col4, col5 = st.columns([5,5,5,5,5],gap='small')
+                with col1:
+                    with col1:
+                        i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                        col1.image(i1)
+                        col1.button("a1a", type="primary")
+                    with col2:
+                        # st.write('Exercises')
+                        i2=Image.open('./media/welcome/biceps.jpg').resize((270,300))
+                        col2.image(i2)
+                        col2.button("a2a", type="primary")
+                    with col3:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col3.image(i3)
+                        col3.button("a3a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col4.image(i3)
+                        col4.button("a4a", type="primary")
+                    with col4:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/triceps.jpg').resize((270,300))
+                        col5.image(i3)
+                        col5.button("a5a", type="primary")        
             
 homepage=HomePage()
 # homepage.health_check()
-homepage.exercise_rec()
+# homepage.exercise_rec()
 # homepage.yoga()
 # homepage.welcome_scn()
 # homepage.exercise_scn()
+# homepage.yoga_scn()
+homepage.yoga_rec()
