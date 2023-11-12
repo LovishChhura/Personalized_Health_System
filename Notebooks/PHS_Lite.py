@@ -510,6 +510,101 @@ class HomePage:
                         col5.image(i3)
                         col5.button("a5a", type="primary")        
             
+    def homeremedies_scn(self):
+        with open('style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=4,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        
+        st.title('PHS Home Remedies')
+        
+        # logo=Image.open('./AmmiM.png').resize((200,200))
+        # st.image(logo)
+        
+        with st.container():
+            # st.write("#### Advanced Level")
+            col1, col2,col3, col4,col5 = st.columns([5,5,5,5,5],gap='small')
+            # st.image("./23.png")
+            with col1:
+                # st.write('Heath Scores')
+                i1=Image.open('./media/welcome/chest.jpg').resize((150,200))
+                st.image(i1)
+                st.button("Chest", type="primary")
+            with col2:
+                # st.write('Exercises')
+                i2=Image.open('./media/welcome/biceps.jpg').resize((150,200))
+                st.image(i2)
+                st.button("Biceps", type="primary")
+            with col3:
+                # st.write('Yoga Asanass')
+                i3=Image.open('./media/welcome/triceps.jpg').resize((150,200))
+                st.image(i3)
+                st.button("Triceps", type="primary")
+            with col4:
+                # st.write('Yoga Asanass')
+                i3=Image.open('./media/welcome/triceps.jpg').resize((150,200))
+                st.image(i3)
+                st.button("hr4", type="primary")
+            with col5:
+                # st.write('Yoga Asanass')
+                i3=Image.open('./media/welcome/triceps.jpg').resize((150,200))
+                st.image(i3)
+                st.button("hr5", type="primary")
+            
+        
+        with st.container():
+            # st.write("#### Advanced Level")
+            col1, col2,col3,col4,col5 = st.columns(5)#([5,5,5],gap='small')
+            with col1:
+                # st.write('Home Remedies')
+                i4=Image.open('./media/welcome/shoulder.jpg').resize((150,200))
+                st.image(i4)
+                st.button("Shoulders", type="primary")
+            with col2:
+                # st.write('Reduce Stress')
+                i5=Image.open('./media/welcome/back.jpg').resize((150,200))
+                st.image(i5)
+                st.button("Back", type="primary")
+            with col3:
+                # st.write('Health Guidelines')
+                i6=Image.open('./media/welcome/leg.jpg').resize((150,200))
+                st.image(i6)
+                st.button("Leg", type="primary")
+            with col4:
+                # st.write('Health Guidelines')
+                i6=Image.open('./media/welcome/leg.jpg').resize((150,200))
+                st.image(i6)
+                st.button("hr9", type="primary")
+            with col5:
+                # st.write('Health Guidelines')
+                i6=Image.open('./media/welcome/leg.jpg').resize((150,200))
+                st.image(i6)
+                st.button("hr10", type="primary")
+                
+    def homeremedies_rec(self):
+        with open('style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=4,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        
+        st.title('PHS Home Remedies')
+        pass
 homepage=HomePage()
 # homepage.health_check()
 # homepage.exercise_rec()
@@ -517,4 +612,6 @@ homepage=HomePage()
 # homepage.welcome_scn()
 # homepage.exercise_scn()
 # homepage.yoga_scn()
-homepage.yoga_rec()
+# homepage.yoga_rec()
+# homepage.homeremedies_scn()
+homepage.homeremedies_rec()
