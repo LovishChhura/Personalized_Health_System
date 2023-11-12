@@ -4,20 +4,42 @@ from streamlit_card import card
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
 from PIL import Image 
+import base64
+from pathlib import Path
+from streamlit_option_menu import option_menu
 
 st.set_page_config(layout="wide")
 
+st.markdown('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">', unsafe_allow_html=True)
+
 with open('style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
     
 
-st.write("""# PHS""")
+# st.write("""# PHS""")
 
 class HomePage:
     def __init__(self):
         pass
     def welcome_scn(self):
-         with st.container():
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=0,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        
+        st.title('PHS')
+        
+        # logo=Image.open('./AmmiM.png').resize((200,200))
+        # st.image(logo)
+        
+        with st.container():
             # st.write("#### Advanced Level")
             col1, col2,col3 = st.columns([5,5,5],gap='small')
             # st.image("./23.png")
@@ -41,7 +63,7 @@ class HomePage:
             # with col5:
             #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
         
-         with st.container():
+        with st.container():
             # st.write("#### Advanced Level")
             col1, col2,col3 = st.columns(3)#([5,5,5],gap='small')
             with col1:
@@ -66,7 +88,19 @@ class HomePage:
 
 
     def health_check(self):
-        with st.form("my_form"):
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=1,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        
+        st.title('PHS')
+        with st.form("my_form",clear_on_submit=True):
             st.write("Check Your Health Score")
             tempF=st.text_input("Body Temperature:")
             pulse=st.text_input("Body Pulse:")
@@ -141,7 +175,7 @@ class HomePage:
             
             
 homepage=HomePage()
-# homepage.health_check()
+homepage.health_check()
 # homepage.exercise_rec()
 # homepage.yoga()
-homepage.welcome_scn()
+# homepage.welcome_scn()
