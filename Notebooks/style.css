@@ -1,0 +1,15 @@
+div.e1f1d6gn2{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding-left: 4%;
+    text-align: center;
+  /* align-items: center; */
+    border: 2px solid #CCCCCC;
+    padding: 2% 4%;
+    border-radius: 5px;
+}
+
+button{
+    background-color: aqua;
+}

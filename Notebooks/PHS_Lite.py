@@ -4,8 +4,13 @@ from streamlit_card import card
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
 from PIL import Image 
- 
+
 st.set_page_config(layout="wide")
+
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+    
+
 st.write("""# PHS""")
 
 class HomePage:
@@ -17,11 +22,20 @@ class HomePage:
             col1, col2,col3 = st.columns([5,5,5],gap='small')
             # st.image("./23.png")
             with col1:
-                card(title="Health Score",text="", image="./23.png" ,url="https://github.com/gamcoh/st-card",key='a1',styles={ "card": {"width": "350px",  "height": "400px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+                # st.write('Heath Scores')
+                i1=Image.open('./media/welcome/9045622.jpg').resize((350,400))
+                st.image(i1)
+                st.button("Heath Scores", type="primary")
             with col2:
-                card(title="Exercises",text="",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='a2',styles={ "card": {"width": "350px",  "height": "400px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+                # st.write('Exercises')
+                i2=Image.open('./media/welcome/4058411.jpg').resize((350,400))
+                st.image(i2)
+                st.button("Exercises", type="primary")
             with col3:
-                card(title="Yoga Asanas",text="",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='a3',styles={ "card": {"width": "350px",  "height": "400px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+                # st.write('Yoga Asanass')
+                i3=Image.open('./media/welcome/6454159.jpg').resize((350,400))
+                st.image(i3)
+                st.button("Yoga Asanas", type="primary")
             # with col4:
             #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
             # with col5:
@@ -29,22 +43,22 @@ class HomePage:
         
          with st.container():
             # st.write("#### Advanced Level")
-            col1, col2,col3 = st.columns([5,5,5],gap='small')
+            col1, col2,col3 = st.columns(3)#([5,5,5],gap='small')
             with col1:
-                # image_url=Image.open("23.png")
-                card(title="Health Score",text="", image="23.png",key='a4',styles={ "card": {"width": "350px",  "height": "400px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
-    #             st.markdown(f"""<div style="border: 1px solid #ccc; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"><a href="https://www.google.co.in">
-    #     <img src="![Your Image](23.png)" alt="Card Image" style="width:100%; height:auto; border-bottom: 1px solid #ccc;">
-    #     <div style="padding: 16px;">
-    #         <h2>Card Title</h2>
-    #         <p>This is some text content for the card. You can add more details here.</p></a>
-    #     </div>
-    # </div>
-    # """,unsafe_allow_html=True)
+                # st.write('Home Remedies')
+                i4=Image.open('./media/welcome/6707511.jpg').resize((350,400))
+                st.image(i4)
+                st.button("Home Remedies", type="primary")
             with col2:
-                card(title="Exercises",text="",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='a5',styles={ "card": {"width": "350px",  "height": "400px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+                # st.write('Reduce Stress')
+                i5=Image.open('./media/welcome/young-woman-suffering-from-headache.jpg').resize((350,400))
+                st.image(i5)
+                st.button("Reduce Stress", type="primary")
             with col3:
-                card(title="Yoga Asanas",text="",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='a6',styles={ "card": {"width": "350px",  "height": "400px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+                # st.write('Health Guidelines')
+                i6=Image.open('./media/welcome/7780771.jpg').resize((350,400))
+                st.image(i6)
+                st.button("Health Guidelines", type="primary")
             # with col4:
             #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
             # with col5:
