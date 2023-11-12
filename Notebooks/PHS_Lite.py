@@ -7,13 +7,13 @@ from PIL import Image
 import base64
 from pathlib import Path
 from streamlit_option_menu import option_menu
+from streamlit_carousel import carousel
 
 st.set_page_config(layout="wide")
 
 st.markdown('<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">', unsafe_allow_html=True)
 
-with open('style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
 
     
 
@@ -23,6 +23,8 @@ class HomePage:
     def __init__(self):
         pass
     def welcome_scn(self):
+        with open('style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
@@ -133,7 +135,68 @@ class HomePage:
                 # st.write(tempF)
                 # print(type(tempF))
             st.write("Live Happy ")
-            
+    
+    def exercise_scn(self):
+        with open('style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=2,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        
+        st.title('PHS')
+        
+        # logo=Image.open('./AmmiM.png').resize((200,200))
+        # st.image(logo)
+        
+        with st.container():
+            # st.write("#### Advanced Level")
+            col1, col2,col3 = st.columns([5,5,5],gap='small')
+            # st.image("./23.png")
+            with col1:
+                # st.write('Heath Scores')
+                i1=Image.open('./media/welcome/chest.jpg').resize((350,400))
+                st.image(i1)
+                st.button("Chest", type="primary")
+            with col2:
+                # st.write('Exercises')
+                i2=Image.open('./media/welcome/biceps.jpg').resize((350,400))
+                st.image(i2)
+                st.button("Biceps", type="primary")
+            with col3:
+                # st.write('Yoga Asanass')
+                i3=Image.open('./media/welcome/triceps.jpg').resize((350,400))
+                st.image(i3)
+                st.button("Triceps", type="primary")
+            # with col4:
+            #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+            # with col5:
+            #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        
+        with st.container():
+            # st.write("#### Advanced Level")
+            col1, col2,col3 = st.columns(3)#([5,5,5],gap='small')
+            with col1:
+                # st.write('Home Remedies')
+                i4=Image.open('./media/welcome/shoulder.jpg').resize((350,400))
+                st.image(i4)
+                st.button("Shoulders", type="primary")
+            with col2:
+                # st.write('Reduce Stress')
+                i5=Image.open('./media/welcome/back.jpg').resize((350,400))
+                st.image(i5)
+                st.button("Back", type="primary")
+            with col3:
+                # st.write('Health Guidelines')
+                i6=Image.open('./media/welcome/leg.jpg').resize((350,400))
+                st.image(i6)
+                st.button("Leg", type="primary")        
     def exercise_rec(self):
         
         st.write("### Exercises for you")
@@ -194,6 +257,7 @@ class HomePage:
             
 homepage=HomePage()
 # homepage.health_check()
-homepage.exercise_rec()
+# homepage.exercise_rec()
 # homepage.yoga()
 # homepage.welcome_scn()
+homepage.exercise_scn()
