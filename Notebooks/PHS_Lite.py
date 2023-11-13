@@ -24,70 +24,92 @@ class HomePage:
     def __init__(self):
         pass
     def welcome_scn(self):
-        with open('style.css') as f:
-            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        # with open('style.css') as f:
+        #     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         selected=option_menu(
             menu_title=None, 
-            options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            options=["Home","Health Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
             icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=0,
             orientation="horizontal",
         )
         if selected=="Home":
-            pass
+            self.welcome_rec()
+        if selected=="Health Score":
+            self.health_check()
+        if selected=="Exercises":
+            self.exercise_scn()
+        if selected=="Yoga Asanas":
+            self.yoga_scn()
+        if selected=="Home Remedies":
+            self.homeremedies_scn()
+        if selected=="Reduce Stress":
+            self.reducestress_scn()
+        if selected=="Health Guidelines":
+            self.healthguide_scn()
         
-        st.title('PHS')
+    def welcome_rec(self):
+        with open('style.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+                
+        st.title('Personalized Health System')
         
         # logo=Image.open('./AmmiM.png').resize((200,200))
         # st.image(logo)
-        
-        with st.container():
+        wel_scn1=st.container()
+        with wel_scn1:
             # st.write("#### Advanced Level")
-            col1, col2,col3 = st.columns([5,5,5],gap='small')
+            col1, col2,col3 = wel_scn1.columns([5,5,5],gap='small')
             # st.image("./23.png")
             with col1:
                 # st.write('Heath Scores')
                 i1=Image.open('./media/welcome/9045622.jpg').resize((350,400))
-                st.image(i1)
-                st.button("Heath Scores", type="primary")
+                col1.image(i1)
+                hs=col1.button("Heath Scores", type="primary")
+                
             with col2:
                 # st.write('Exercises')
                 i2=Image.open('./media/welcome/4058411.jpg').resize((350,400))
-                st.image(i2)
-                st.button("Exercises", type="primary")
+                col2.image(i2)
+                col2.button("Exercises", type="primary")
             with col3:
                 # st.write('Yoga Asanass')
                 i3=Image.open('./media/welcome/6454159.jpg').resize((350,400))
-                st.image(i3)
-                st.button("Yoga Asanas", type="primary")
+                col3.image(i3)
+                col3.button("Yoga Asanas", type="primary")
             # with col4:
             #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
             # with col5:
             #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
         
-        with st.container():
+        wel_scn2=st.container()
+        with wel_scn2:
             # st.write("#### Advanced Level")
-            col1, col2,col3 = st.columns(3)#([5,5,5],gap='small')
-            with col1:
+            col4, col5,col6 = wel_scn2.columns(3)#([5,5,5],gap='small')
+            with col4:
                 # st.write('Home Remedies')
                 i4=Image.open('./media/welcome/6707511.jpg').resize((350,400))
-                st.image(i4)
-                st.button("Home Remedies", type="primary")
-            with col2:
+                col4.image(i4)
+                col4.button("Home Remedies", type="primary")
+            with col5:
                 # st.write('Reduce Stress')
                 i5=Image.open('./media/welcome/young-woman-suffering-from-headache.jpg').resize((350,400))
-                st.image(i5)
-                st.button("Reduce Stress", type="primary")
-            with col3:
+                col5.image(i5)
+                col5.button("Reduce Stress", type="primary")
+            with col6:
                 # st.write('Health Guidelines')
                 i6=Image.open('./media/welcome/7780771.jpg').resize((350,400))
-                st.image(i6)
-                st.button("Health Guidelines", type="primary")
+                col6.image(i6)
+                col6.button("Health Guidelines", type="primary")
             # with col4:
             #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
             # with col5:
             #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        if hs:
+            del(wel_scn1)
+            del(wel_scn2)
+            self.health_check()
 
 
     def health_check(self):
@@ -101,16 +123,7 @@ class HomePage:
                                     # value = st.checkbox("Check me")
                                     # st.write(f"Checkbox checked: {value}")
             
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=1,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
+        
         
         st.title('PHS')
         with st.form("my_form"):
@@ -140,31 +153,24 @@ class HomePage:
     def exercise_scn(self):
         with open('style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=2,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
         
         st.title('PHS')
         
         # logo=Image.open('./AmmiM.png').resize((200,200))
         # st.image(logo)
+        excont1=st.container()
         
-        with st.container():
+        with excont1:
             # st.write("#### Advanced Level")
-            col1, col2,col3 = st.columns([5,5,5],gap='small')
+            col1, col2,col3 = excont1.columns([5,5,5],gap='small')
             # st.image("./23.png")
             with col1:
                 # st.write('Heath Scores')
                 i1=Image.open('./media/welcome/chest.jpg').resize((350,400))
                 st.image(i1)
-                st.button("Chest", type="primary")
+                ex1=st.button("Chest", type="primary")
+                # if ex1:
+                #    self.exercise_scn()
             with col2:
                 # st.write('Exercises')
                 i2=Image.open('./media/welcome/biceps.jpg').resize((350,400))
@@ -210,16 +216,7 @@ class HomePage:
             img_html = "<img src='data:image/png;base64,{}' class='img-fluid'>".format(img_to_bytes(img_path))
             return img_html
 
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=2,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
+        
         tab1, tab2 = st.tabs(["Beginners", "Advanced"])
         with tab1:
             # st.header("A cat")
@@ -231,7 +228,8 @@ class HomePage:
                     with col1:
                         i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
                         col1.image(i1)
-                        col1.button("b1a", type="primary")
+                        ex1=col1.button("b1a", type="primary")
+                        
                     with col2:
                         # st.write('Exercises')
                         i2=Image.open('./media/welcome/biceps.jpg').resize((270,300))
@@ -315,16 +313,6 @@ class HomePage:
     def yoga_scn(self):
         with open('style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=3,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
         
         st.title('PHS Yoga Asanas')
         
@@ -409,16 +397,7 @@ class HomePage:
             img_html = "<img src='data:image/png;base64,{}' class='img-fluid'>".format(img_to_bytes(img_path))
             return img_html
 
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=3,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
+        
         tab1, tab2, tab3 = st.tabs(["Beginners","Intermediate", "Advanced"])
         with tab1:
             # st.header("A cat")
@@ -513,16 +492,6 @@ class HomePage:
     def homeremedies_scn(self):
         with open('style.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=4,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
         
         st.title('PHS Home Remedies')
         
@@ -592,16 +561,6 @@ class HomePage:
     def homeremedies_rec(self):
         with open('style2.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=4,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
         
         st.title('PHS Home Remedies')
         with st.container():
@@ -626,16 +585,7 @@ class HomePage:
     def reducestress_scn(self):
         with open('style2.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=5,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
+        
         
         st.title('PHS Stress Reduction')
         with st.container():
@@ -744,16 +694,7 @@ class HomePage:
     def healthguide_scn(self):
         with open('style3.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-        selected=option_menu(
-            menu_title=None, 
-            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
-            menu_icon="cast",
-            default_index=6,
-            orientation="horizontal",
-        )
-        if selected=="Home":
-            pass
+        
         
         st.title('PHS Health Guidelines')
         with st.container():
