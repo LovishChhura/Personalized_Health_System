@@ -590,7 +590,7 @@ class HomePage:
                 st.button("hr10", type="primary")
                 
     def homeremedies_rec(self):
-        with open('style.css') as f:
+        with open('style2.css') as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
         selected=option_menu(
             menu_title=None, 
@@ -604,7 +604,142 @@ class HomePage:
             pass
         
         st.title('PHS Home Remedies')
-        pass
+        with st.container():
+            st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>1. Ginger</h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Ginger has antioxidant, antimicrobial, and anti-inflammatory properties. Uses includeTrusted Source reducing muscle pain and managing nausea.Make tea by simmering a few slices of raw ginger root in boiling water.As well as providing hydration, it may soothe muscle pain, ease a sore throat, and reduce nausea, if present.</p><hr/>''',unsafe_allow_html=True)
+                st.markdown('''<h5>2. Ginger</h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Ginger has antioxidant, antimicrobial, and anti-inflammatory properties. Uses includeTrusted Source reducing muscle pain and managing nausea.Make tea by simmering a few slices of raw ginger root in boiling water.As well as providing hydration, it may soothe muscle pain, ease a sore throat, and reduce nausea, if present.</p><hr/>''',unsafe_allow_html=True)
+                st.markdown('''<h5>3. Ginger</h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Ginger has antioxidant, antimicrobial, and anti-inflammatory properties. Uses includeTrusted Source reducing muscle pain and managing nausea.Make tea by simmering a few slices of raw ginger root in boiling water.As well as providing hydration, it may soothe muscle pain, ease a sore throat, and reduce nausea, if present.</p><hr/>''',unsafe_allow_html=True)
+                st.markdown('''<h5>4. Ginger</h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Ginger has antioxidant, antimicrobial, and anti-inflammatory properties. Uses includeTrusted Source reducing muscle pain and managing nausea.Make tea by simmering a few slices of raw ginger root in boiling water.As well as providing hydration, it may soothe muscle pain, ease a sore throat, and reduce nausea, if present.</p><hr/>''',unsafe_allow_html=True)
+                st.markdown('''<h5>5. Ginger</h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Ginger has antioxidant, antimicrobial, and anti-inflammatory properties. Uses includeTrusted Source reducing muscle pain and managing nausea.Make tea by simmering a few slices of raw ginger root in boiling water.As well as providing hydration, it may soothe muscle pain, ease a sore throat, and reduce nausea, if present.</p>''',unsafe_allow_html=True)
+      
+    def reducestress_scn(self):
+        with open('style2.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=5,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        
+        st.title('PHS Stress Reduction')
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>1. Get more physical activity </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>If you're stressed, moving your body consistently may help reduceTrusted Source stress levels and improve mood. A 6-week studyTrusted Source of 185 university students found that participating in aerobic exercise 2 days per week significantly reduced overall perceived stress and perceived stress due to uncertainty. Plus, the exercise routine significantly improved self-reported depression. Regular exercise has been shown to improve symptomsTrusted Source of common mental health conditions such as anxiety and depression (15Trusted Source, 16Trusted Source). If you’re currently inactive, start with gentle activities such as walking or biking. Choosing an activity that you enjoy may help increase your chances of sticking to it in the long term.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>2. Eat a balanced diet </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Your diet affects every aspect of your health, including your mental health. A 2022 review of researchTrusted Source suggests that people who follow a diet high in ultra-processed foods and added sugar are more likely to experience higher perceived stress levels. Being chronically stressed may lead you to overeat and reach for highly palatable foods, which may harm your overall health and mood. Not eating enough nutrient-dense whole foods may increase your risk of deficiencies in nutrients essential for regulating stress and mood, such as magnesium and B vitamins. Minimizing your intake of highly processed foods and beverages and eating more whole foods can help ensure your body is properly nourished. In turn, this may improve your resilience to stress. Whole food options can include: vegetables, fruits, beans, nuts, seeds.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>3. Minimize phone use and screen time </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>While smartphones, computers, and tablets are often necessary, using them too often may increase stress levels. A 2021 review of literatureTrusted Source points out that several studies have linked excessive smartphone use with increased stress levels and mental health disorders. Spending too much time in front of screens is associated with lower psychological well-being and increased stress levels in adults and kids. Furthermore, screen time may negatively affect sleep, which may also leadTrusted Source to increased stress levels.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>4. Practice self-care </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Setting aside time to practice self-care may help reduceTrusted Source your stress levels. Practical examples include: going for a walk outside, taking a bath, lighting candles, reading a good book, exercising, preparing a healthy meal, stretching before bed, getting a massage, practicing a hobby, using a diffuser with calming scents, practicing yoga. People who engage in self-care typically haveTrusted Source lower levels of stress and improved quality of life, while a lack of self-care is associated with a higher risk of stress and burnout. Taking time for yourself is essential to live a healthy life. This is especially important for people who tend to be highly stressed, including nurses, doctors, teachers, and caretakers. Self-care doesn’t have to be elaborate or complicated. It simply means tending to your well-being and happiness. Exposure to certain scents via candles or essential oils may be especially calming. Here are a few relaxing scents: lavender, rose, vetiver, bergamot, Roman chamomile, neroli, frankincense, sandalwood, ylang-ylang, orange or orange blossom, geranium. Using scents to boost your mood is called aromatherapy. Aromatherapy can decrease anxiety and improve sleep.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>5. Reduce your caffeine intake </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Caffeine is a chemical in coffee, tea, chocolate, and energy drinks that stimulates your central nervous system. Consuming too much may worsen anxiety, according to a 2021 review of literatureTrusted Source on the subject. Overconsumption may also harm your sleep. In turn, this may increase stress and anxiety symptoms. People have different thresholds for how much caffeine they can tolerate. If caffeine makes you jittery or anxious, consider cutting back by replacing coffee or energy drinks with decaffeinated coffee, herbal tea, or water. though coffee has health benefits in moderation, it's recommended to keep caffeine intake under 400 mgTrusted Source daily, which equals 4–5 cups (0.9–1.2 L) of coffee. Still, people sensitive to caffeine may experience increased anxiety and stress after consuming less caffeine than this, so it's important to consider your tolerance.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>6. Spend time with friends and family </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Social support from friends and family may help you get through stressful times and cope with stress. One 2019 studyTrusted Source in 163 ​​Latinx college-age young adults associated lower levels of support from friends, family, and romantic partners with loneliness, depressive symptoms, and perceived stress. Having a social support system is important for your overall mental health. If you're feeling alone and don't have friends or family to depend on, social support groups may help. Consider joining a club or sports team or volunteering for a cause that's important to you.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>7. Create boundaries and learn to say <b>No</b> </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Not all stressors are within your control, but some are. Putting too much on your plate may increase your stress load and limit the amount of time you can spend on self-care. One way to help reduce stress and protect your mental health may be to say “no” more often. This is especially true if you take on more than you can handle because juggling many responsibilities may leave you feeling overwhelmed. Being selective about what you take on — and saying “no” to things that will unnecessarily add to your load — can reduce your stress levels. Creating boundaries — especially with people who add to your stress levels — is a healthy way to protect your well-being. This can be as simple as asking a friend or family member not to stop by unannounced or canceling standing plans with a friend if you need more space.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>8. Avoid procrastination </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Another way to take control of your stress is to stay on top of your priorities and avoid procrastinating when you aren’t feeling stressed. Procrastination may harm your productivity and leave you scrambling to catch up. This can cause stress, which negatively affects your health and sleep quality. It’s also true that you may be more likelyTrusted Source to procrastinate in times of stress as a coping mechanism. A studyTrusted Source in 140 medical students in China linked procrastination to increased stress levels. The study also associated procrastination and delayed stress reactions with more negative parenting styles, including punishment and rejection. If you find yourself procrastinating regularly, it may be helpful to make a to-do list organized by priority. Give yourself realistic deadlines and work your way down the list. Sometimes, adding an item to the list may help you feel better about it, even if it doesn’t get done immediately. Work on the things that need to get done today, and give yourself chunks of uninterrupted time. Switching between tasks or multitasking can be stressful in itself.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>9. Take a yoga class </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Yoga has become a popular method of stress relief and exercise among all age groups. While yoga styles differ, most share a common goal — to join your body and mind by increasing body and breath awareness. ResearchTrusted Source shows that yoga helps reduce stress and anxiety. Plus, it can promote psychological well-being. These benefits seem related to yoga’s effect on your nervous system and stress response. Yoga may helpTrusted Source lower cortisol levels, blood pressure, and heart rate while increasing levels of gamma aminobutyric acid, a neurotransmitter that’s low in people with mood disorders.</p>''',unsafe_allow_html=True)
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2 = st.columns([2,8],gap='small')
+            with col1:
+                i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                col1.image(i1)
+                
+            with col2:
+                st.markdown('''<h5>10. Spend time in nature </h5>''',unsafe_allow_html=True)
+                st.markdown('''<p>Spending more time outside may help reduce stress. Studies show that spending time in green spaces such as parks and forests and being immersed in nature are healthy ways to manage stress. A review of 14 studiesTrusted Source found that spending as little as 10 minutes in a natural setting may help improve psychological and physiological markers of mental well-being, including perceived stress and happiness, in college-aged people. Hiking and camping are great options, but some people don’t enjoy — or have access to — these activities. Even in an urban area, you can seek out green spaces such as local parks, arboretums, and botanical gardens.</p>''',unsafe_allow_html=True)
+                
+        pass          
 homepage=HomePage()
 # homepage.health_check()
 # homepage.exercise_rec()
@@ -614,4 +749,5 @@ homepage=HomePage()
 # homepage.yoga_scn()
 # homepage.yoga_rec()
 # homepage.homeremedies_scn()
-homepage.homeremedies_rec()
+# homepage.homeremedies_rec()
+homepage.reducestress_scn()
