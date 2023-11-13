@@ -739,7 +739,86 @@ class HomePage:
                 st.markdown('''<h5>10. Spend time in nature </h5>''',unsafe_allow_html=True)
                 st.markdown('''<p>Spending more time outside may help reduce stress. Studies show that spending time in green spaces such as parks and forests and being immersed in nature are healthy ways to manage stress. A review of 14 studiesTrusted Source found that spending as little as 10 minutes in a natural setting may help improve psychological and physiological markers of mental well-being, including perceived stress and happiness, in college-aged people. Hiking and camping are great options, but some people don’t enjoy — or have access to — these activities. Even in an urban area, you can seek out green spaces such as local parks, arboretums, and botanical gardens.</p>''',unsafe_allow_html=True)
                 
+        pass
+    
+    def healthguide_scn(self):
+        with open('style3.css') as f:
+            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+        selected=option_menu(
+            menu_title=None, 
+            options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
+            icons=("house","book","envelope","house","book","envelope","house"),
+            menu_icon="cast",
+            default_index=6,
+            orientation="horizontal",
+        )
+        if selected=="Home":
+            pass
+        
+        st.title('PHS Health Guidelines')
+        with st.container():
+            # st.write("#### Common Cold")
+            col1, col2,col3 = st.columns((3),gap='small')
+            d={'author': 'TIMESOFINDIA.COM',
+               'content': 'In global health, hypertension emerges as a '
+                          'prevalent concern, affecting almost 1.28 billion '
+                          'adults aged 30–79 years, as per World Health '
+                          'Organisation. However, what makes this statistic '
+                          'even more no… [+341 chars]',
+               'description': 'There is a global prevalence of hypertension, '
+                              'particularly among women, and identifies five '
+                              'surprising reasons behind it.  The article '
+                              'emphasizes lifestyle changes and preventive '
+                              'measures to take control of cardiovascular '
+                              'health. It encourages a holistic appr…',
+               'publishedAt': '2023-11-11T18:30:00Z',
+               'source': {'id': 'the-times-of-india',
+                          'name': 'The Times of India'},
+               'title': '5 shocking reasons behind hypertension seen in women '
+                        '- IndiaTimes',
+               'url': 'https://timesofindia.indiatimes.com/life-style/health-fitness/health-news/5-shocking-reasons-behind-hypertension-seen-in-women/photostory/105102871.cms',
+               'urlToImage': 'https://static.toiimg.com/photo/105102897.cms'}
+            img=d['urlToImage']
+            title=d['title']
+            desc=d['description']
+            author=d['author']
+            dateofpub=d['publishedAt'][:10]
+            url=d['url']
+            with col1:
+                # i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                # col1.image(i1)
+                col1.markdown(f'''<img src="{img}" alt="Paris" style="width:250px">''',unsafe_allow_html=True)
+                col1.markdown(f'''<h4>{title}</h4>''',unsafe_allow_html=True)
+                col1.markdown(f'''<b>Desc:</b> {desc}''',unsafe_allow_html=True)
+                col1.markdown(f'''<a href="{url}">Read more</a>''',unsafe_allow_html=True)
+                col1.markdown(f'''<b>Author: </b><i>{author}</i> <b>Date:</b> <i>{dateofpub}</i>''',unsafe_allow_html=True)
+                # col1.markdown('''''',unsafe_allow_html=True)
+                # col1.markdown('''''',unsafe_allow_html=True)
+            
+            with col2:
+                # i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                # col1.image(i1)
+                col2.markdown(f'''<img src="{img}" alt="Paris" style="width:250px">''',unsafe_allow_html=True)
+                col2.markdown(f'''<h4>{title}</h4>''',unsafe_allow_html=True)
+                col2.markdown(f'''<b>Desc:</b> {desc}''',unsafe_allow_html=True)
+                col2.markdown(f'''<a href="{url}">Read more</a>''',unsafe_allow_html=True)
+                col2.markdown(f'''<b>Author: </b><i>{author}</i> <b>Date:</b> <i>{dateofpub}</i>''',unsafe_allow_html=True)
+                # col1.markdown('''''',unsafe_allow_html=True)
+                # col1.markdown('''''',unsafe_allow_html=True)
+                
+            with col3:
+                # i1=Image.open('./media/welcome/chest.jpg').resize((270,300))
+                # col1.image(i1)
+                col3.markdown(f'''<img src="{img}" alt="Paris" style="width:250px">''',unsafe_allow_html=True)
+                col3.markdown(f'''<h4>{title}</h4>''',unsafe_allow_html=True)
+                col3.markdown(f'''<b>Desc:</b> {desc}''',unsafe_allow_html=True)
+                col3.markdown(f'''<a href="{url}">Read more</a>''',unsafe_allow_html=True)
+                col3.markdown(f'''<b>Author: </b><i>{author}</i> <b>Date:</b> <i>{dateofpub}</i>''',unsafe_allow_html=True)
+                # col1.markdown('''''',unsafe_allow_html=True)
+                # col1.markdown('''''',unsafe_allow_html=True)
         pass          
+
+
 homepage=HomePage()
 # homepage.health_check()
 # homepage.exercise_rec()
@@ -750,4 +829,5 @@ homepage=HomePage()
 # homepage.yoga_rec()
 # homepage.homeremedies_scn()
 # homepage.homeremedies_rec()
-homepage.reducestress_scn()
+# homepage.reducestress_scn()
+homepage.healthguide_scn()

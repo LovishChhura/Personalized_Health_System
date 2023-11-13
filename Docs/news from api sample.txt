@@ -7,4 +7,4 @@
                         'to TB in India, coverage of its treatments - The '
                         'Indian Express',
                'url': 'https://indianexpress.com/article/explained/explained-health/indias-tb-mortality-report-2023-explained-9023266/',
-               'urlToImage': None},
+               'urlToImage': None}
