@@ -29,7 +29,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=0,
             orientation="horizontal",
@@ -104,7 +104,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=1,
             orientation="horizontal",
@@ -143,7 +143,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=2,
             orientation="horizontal",
@@ -213,7 +213,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=2,
             orientation="horizontal",
@@ -318,7 +318,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=3,
             orientation="horizontal",
@@ -412,7 +412,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Exercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=3,
             orientation="horizontal",
@@ -516,7 +516,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=4,
             orientation="horizontal",
@@ -595,7 +595,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=4,
             orientation="horizontal",
@@ -629,7 +629,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=5,
             orientation="horizontal",
@@ -747,7 +747,7 @@ class HomePage:
         selected=option_menu(
             menu_title=None, 
             options=["Home","Heath Score","Excercises","Yoga Asanas","Home Remedies","Reduce Stress","Health Guidelines"],
-            icons=("house","book","envelope","house","book","envelope","house"),
+            icons=("house","coin","controller","emoji-heart-eyes","apple","balloon-heart","hospital"),
             menu_icon="cast",
             default_index=6,
             orientation="horizontal",
@@ -830,4 +830,5 @@ homepage=HomePage()
 # homepage.homeremedies_scn()
 # homepage.homeremedies_rec()
 # homepage.reducestress_scn()
-homepage.healthguide_scn()
+# homepage.healthguide_scn()
+homepage.welcome_scn()
