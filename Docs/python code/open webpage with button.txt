@@ -1,0 +1,7 @@
+import streamlit as st
+import webbrowser
+
+url = 'https://www.streamlit.io/'
+
+if st.button('Open browser'):
+    webbrowser.open_new_tab(url)

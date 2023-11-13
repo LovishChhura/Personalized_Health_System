@@ -1,0 +1,10 @@
+{'author': 'The Indian Express',
+               'content': None,
+               'description': None,
+               'publishedAt': '2023-11-12T04:15:52Z',
+               'source': {'id': None, 'name': 'The Indian Express'},
+               'title': 'What WHO’s report has said on reduction in deaths due '
+                        'to TB in India, coverage of its treatments - The '
+                        'Indian Express',
+               'url': 'https://indianexpress.com/article/explained/explained-health/indias-tb-mortality-report-2023-explained-9023266/',
+               'urlToImage': None},
