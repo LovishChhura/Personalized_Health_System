@@ -50,105 +50,93 @@ class HomePage:
             self.healthguide_scn()
         
     def welcome_rec(self):
-        with open('style.css') as f:
-            st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-                
-        st.title('Personalized Health System')
         
-        # logo=Image.open('./AmmiM.png').resize((200,200))
-        # st.image(logo)
-        wel_scn1=st.container()
-        with wel_scn1:
-            # st.write("#### Advanced Level")
-            col1, col2,col3 = wel_scn1.columns([5,5,5],gap='small')
-            # st.image("./23.png")
-            with col1:
-                # st.write('Heath Scores')
-                i1=Image.open('./media/welcome/9045622.jpg').resize((350,400))
-                col1.image(i1)
-                hs=col1.button("Heath Scores", type="primary")
-                
-            with col2:
-                # st.write('Exercises')
-                i2=Image.open('./media/welcome/4058411.jpg').resize((350,400))
-                col2.image(i2)
-                col2.button("Exercises", type="primary")
-            with col3:
-                # st.write('Yoga Asanass')
-                i3=Image.open('./media/welcome/6454159.jpg').resize((350,400))
-                col3.image(i3)
-                col3.button("Yoga Asanas", type="primary")
-            # with col4:
-            #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
-            # with col5:
-            #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+        # Create a session state to persist the widget state
+        if "widget_state" not in st.session_state:
+            st.session_state.widget_state = "welcome"
         
-        wel_scn2=st.container()
-        with wel_scn2:
-            # st.write("#### Advanced Level")
-            col4, col5,col6 = wel_scn2.columns(3)#([5,5,5],gap='small')
-            with col4:
-                # st.write('Home Remedies')
-                i4=Image.open('./media/welcome/6707511.jpg').resize((350,400))
-                col4.image(i4)
-                col4.button("Home Remedies", type="primary")
-            with col5:
-                # st.write('Reduce Stress')
-                i5=Image.open('./media/welcome/young-woman-suffering-from-headache.jpg').resize((350,400))
-                col5.image(i5)
+        # Widget 1
+        if st.session_state.widget_state == "welcome":
+            with open('style.css') as f:
+                st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+            st.title('Personalized Health System')
+            
+            wel_scn1=st.container()
+            with wel_scn1:
+                # st.write("#### Advanced Level")
+                col1, col2,col3 = wel_scn1.columns([5,5,5],gap='small')
+                # st.image("./23.png")
+                with col1:
+                    # st.write('Heath Scores')
+                    i1=Image.open('./media/welcome/9045622.jpg').resize((350,400))
+                    col1.image(i1)
+                    hs=col1.button("Heath Scores", type="primary")
+                
+                with col2:
+                    # st.write('Exercises')
+                    i2=Image.open('./media/welcome/4058411.jpg').resize((350,400))
+                    col2.image(i2)
+                    col2.button("Exercises", type="primary")
+                    with col3:
+                        # st.write('Yoga Asanass')
+                        i3=Image.open('./media/welcome/6454159.jpg').resize((350,400))
+                        col3.image(i3)
+                        col3.button("Yoga Asanas", type="primary")
+        
+            wel_scn2=st.container()
+            with wel_scn2:
+                # st.write("#### Advanced Level")
+                col4, col5,col6 = wel_scn2.columns(3)#([5,5,5],gap='small')
+                with col4:
+                    # st.write('Home Remedies')
+                    i4=Image.open('./media/welcome/6707511.jpg').resize((350,400))
+                    col4.image(i4)
+                    col4.button("Home Remedies", type="primary")
+                with col5:
+                    # st.write('Reduce Stress')
+                    i5=Image.open('./media/welcome/young-woman-suffering-from-headache.jpg').resize((350,400))
+                    col5.image(i5)
                 col5.button("Reduce Stress", type="primary")
-            with col6:
-                # st.write('Health Guidelines')
-                i6=Image.open('./media/welcome/7780771.jpg').resize((350,400))
-                col6.image(i6)
-                col6.button("Health Guidelines", type="primary")
-            # with col4:
-            #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b4',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
-            # with col5:
-            #     card(title="Hello World!",text="Some description",image="https://static.streamlit.io/examples/dog.jpg" ,url="https://github.com/gamcoh/st-card",key='b5',styles={ "card": {"width": "200px",  "height": "300px", "border-radius": "60px", "box-shadow": "0 0 10px rgba(0,0,0,0.5)" }, "text": { "font-family": "serif"} })
+                with col6:
+                    # st.write('Health Guidelines')
+                    i6=Image.open('./media/welcome/7780771.jpg').resize((350,400))
+                    col6.image(i6)
+                    col6.button("Health Guidelines", type="primary")
+
+        
+            
         if hs:
-            del(wel_scn1)
-            del(wel_scn2)
+            st.session_state.widget_state = "health_score"
             self.health_check()
 
 
     def health_check(self):
-        def modal_dis():
-            modal = Modal("hi",key="Demo")
-            with modal.container():
-                                    # st.write("Text goes here")
-                                    html_string = '''<h1>HTML string in RED</h1><script language="javascript">document.querySelector("h1").style.color = "red";</script>'''
-                                    components.html(html_string)
-                                    # st.write("Some fancy text")
-                                    # value = st.checkbox("Check me")
-                                    # st.write(f"Checkbox checked: {value}")
-            
-        
-        
-        st.title('PHS')
-        with st.form("my_form"):
-            st.write("Check Your Health Score")
-            tempF=st.text_input("Body Temperature:")
-            pulse=st.text_input("Body Pulse:")
-            respr=st.text_input("Respiration Rate:")
-            bpsys=st.text_input("Bystolic BP:")
-            bpdia=st.text_input("Diastolic BP:")
-            popct=st.text_input("Blood Oxygen:")
-            # Every form must have a submit button.
-            submitted = st.form_submit_button("Submit")
-            if submitted:
-                if tempF and pulse and respr and bpsys and bpdia and popct:
-                    healthFrame=pd.DataFrame([[tempF, pulse, respr, bpsys, bpdia, popct]],columns=['tempF','pulse','respr','bpsys','bpdia','popct'])
-                    st.write('''<h3>Your health score is <b>1</b></h3>''',unsafe_allow_html=True)                                   
-                    st.write('''<h5 style="color:green"><i>Health status: Healthy</i><h5>''',unsafe_allow_html=True)                                   
-                else:
-                    # st.warning('Fill all fields', icon="⚠️")
-                    st.error('Fill all fields', icon="🚨")
+        # Widget 2
+        if st.session_state.widget_state == "health_score":        
+            st.title('PHS')
+            with st.form("my_form"):
+                st.write("Check Your Health Score")
+                tempF=st.text_input("Body Temperature:")
+                pulse=st.text_input("Body Pulse:")
+                respr=st.text_input("Respiration Rate:")
+                bpsys=st.text_input("Bystolic BP:")
+                bpdia=st.text_input("Diastolic BP:")
+                popct=st.text_input("Blood Oxygen:")
+                # Every form must have a submit button.
+                submitted = st.form_submit_button("Submit")
+                if submitted:
+                    if tempF and pulse and respr and bpsys and bpdia and popct:
+                        healthFrame=pd.DataFrame([[tempF, pulse, respr, bpsys, bpdia, popct]],columns=['tempF','pulse','respr','bpsys','bpdia','popct'])
+                        st.write('''<h3>Your health score is <b>1</b></h3>''',unsafe_allow_html=True)                                   
+                        st.write('''<h5 style="color:green"><i>Health status: Healthy</i><h5>''',unsafe_allow_html=True)                                   
+                    else:
+                        # st.warning('Fill all fields', icon="⚠️")
+                        st.error('Fill all fields', icon="🚨")
                 # st.write("Submitted")
                 
                 # st.write(tempF)
                 # print(type(tempF))
-            st.write("Live Happy ")
+                st.write("Live Happy ")
     
     def exercise_scn(self):
         with open('style.css') as f:

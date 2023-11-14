@@ -1,2 +1,5 @@
-# api_key='64f00867b3db40f79eb479d459468b84'
-#pin Code654321#
+# ignore ALL .log files
+*.log
+
+# ignore ALL files in ANY directory named temp
+temp/
