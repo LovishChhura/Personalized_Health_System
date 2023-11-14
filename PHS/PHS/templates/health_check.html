@@ -14,7 +14,7 @@
     <!-- Adding navbar here -->
     <nav class="navo navbar navbar-expand-lg ">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><b>PHS</b></a>
+            <a class="navbar-brand" href="/"><b>PHS</b></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li> -->
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Health Score</a>
+                        <a class="nav-link active" href="/health_check">Health Score</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -114,36 +114,36 @@
     <section class="bs-main bg-color hero-section mt-0">
         <div class="container formy">
             <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
-                <form id="health_form">
+                <form id="health_form" method="post" action="/health_index">
                     <div class="form-group">
                         <label for="tempF">Body Temperature:</label>
-                        <input type="text" class="form-control" id="tempF" required>
+                        <input type="text" class="form-control" id="tempF" name="tempF"required>
                     </div>
                     <div class="form-group">
                         <label for="pulse">Body Pulse:</label>
-                        <input type="text" class="form-control" id="pulse" required>
+                        <input type="text" class="form-control" id="pulse" name="pulse" required>
                     </div>
                     <div class="form-group">
                         <label for="respr">Respiration Rate:</label>
-                        <input type="text" class="form-control" id="respr" required>
+                        <input type="text" class="form-control" id="respr" name="respr" required>
                     </div>
                     <div class="form-group">
                         <label for="bpsys">Bystolic BP:</label>
-                        <input type="text" class="form-control" id="bpsys" required>
+                        <input type="text" class="form-control" id="bpsys" name="bpsys" required>
                     </div>
                     <div class="form-group">
                         <label for="bpdia">Diastolic BP:</label>
-                        <input type="text" class="form-control" id="bpdia" required>
+                        <input type="text" class="form-control" id="bpdia" name="bpdia" required>
                     </div>
                     <div class="form-group">
                         <label for="popct">Body Oxygen:</label>
-                        <input type="text" class="form-control" id="popct" aria-describedby="emailHelp" required>
+                        <input type="text" class="form-control" id="popct" name="popct" aria-describedby="emailHelp" required>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone
                             else.</small>
                     </div>
 
                     <button type="submit" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModal">Submit</button>
+                        data-target="#exampleModal" onclick="submitForm()">Submit</button>
                 </form>
 
             </div>
@@ -177,10 +177,11 @@
 
 
     <script>
-        $('#health_form').on('submit', function (e) {
-            $('#exampleModal').modal('show');
-            e.preventDefault();
-        });
+         function submitForm() {
+      // Here you can add the logic to handle form submission
+      // For this example, we'll just show the success modal
+      $('#exampleModal').modal('show');
+    }
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

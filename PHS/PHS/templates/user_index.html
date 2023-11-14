@@ -1,122 +1,16 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>User Dash</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./user-style.css">
-</head>
+{% block title %}User Dashboard{% endblock title %}
 
-<body>
-    <!-- Adding navbar here -->
-    <nav class="navo navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><b>PHS</b></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Health Score</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Exercises
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Chest</a></li>
-                            <li><a class="dropdown-item" href="#">Biceps</a></li>
-                            <li><a class="dropdown-item" href="#">Triceps</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Shoulders</a></li>
-                            <li><a class="dropdown-item" href="#">Back</a></li>
-                            <li><a class="dropdown-item" href="#">Legs</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Yoga Asanas
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Standing Asanas</a></li>
-                            <li><a class="dropdown-item" href="#">Sitting Asanas</a></li>
-                            <li><a class="dropdown-item" href="#">Laying_on_Stomach Asanas</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Laying_on_Back Asanas</a></li>
-                            <li><a class="dropdown-item" href="#">Balancing Asanas</a></li>
-                            <li><a class="dropdown-item" href="#">Eyes Asanas</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Home Remedies
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Common Cold</a></li>
-                            <li><a class="dropdown-item" href="#">Headache</a></li>
-                            <li><a class="dropdown-item" href="#">Obesity</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Kidney Stone</a></li>
-                            <li><a class="dropdown-item" href="#">Stomach Pain</a></li>
-                            <li><a class="dropdown-item" href="#">Muscle Ache</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Cough</a></li>
-                            <li><a class="dropdown-item" href="#">Nausea</a></li>
-                            <li><a class="dropdown-item" href="#">Malaria</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Reduce Stress</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Health Guidelines</a>
-                    </li>
-
-
-
-                </ul>
-                <span class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Setting
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Account Setting</a></li>
-                        <li><a class="dropdown-item" href="#">Log Out</a></li>
-                    </ul>
-                </span>
-            </div>
-        </div>
-    </nav>
-    <!-- navbar ends here -->
-
+{% block body %}
+   
     <!-- hero section starts here -->
     <section class="bs-main bg-color hero-section mt-0">
         <div class="container">
             <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="card text-center" style="width: 18rem;">
-                        <img src="./media/9045622.jpg" class="card-img-top" alt="...">
+                        <img src="./static/media/welcome/9045622.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <!-- <h5 class="card-title">Card title</h5> -->
                             <a href="#" class="btn btn-primary">Health Assessment</a>
@@ -125,35 +19,35 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 gy-3">
                     <div class="card text-center" style="width: 18rem;">
-                        <img src="./media/pexels-photo-1431282.jpeg" class="card-img-top" alt="...">
+                        <img src="./static/media/welcome/pexels-photo-1431282.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="#" class="btn btn-primary">Exercises</a>
+                            <a href="#exercise" class="btn btn-primary">Exercises</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 gy-3">
                     <div class="card text-center" style="width: 18rem;">
-                        <img src="./media/pexels-marta-wave-6454159.jpg" class="card-img-top" alt="...">
+                        <img src="./static/media/welcome/pexels-marta-wave-6454159.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="#" class="btn btn-primary">Yoga Asanas</a>
+                            <a href="#yoga" class="btn btn-primary">Yoga Asanas</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 gy-3">
                     <div class="card text-center" style="width: 18rem;">
-                        <img src="./media/pexels-mikhail-nilov-6707511.jpg" class="card-img-top" alt="...">
+                        <img src="./static/media/welcome/pexels-mikhail-nilov-6707511.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="#" class="btn btn-primary">Home Remedies</a>
+                            <a href="#home_remedies" class="btn btn-primary">Home Remedies</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 gy-3">
                     <div class="card text-center" style="width: 18rem;">
-                        <img src="./media/young-woman-suffering-from-headache.jpg" class="card-img-top" alt="...">
+                        <img src="./static/media/welcome/young-woman-suffering-from-headache.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <!-- <h5 class="card-title">Card title</h5> -->
                             <a href="#" class="btn btn-primary">Reduce Stress</a>
@@ -162,7 +56,7 @@
                 </div>
                 <div class="col-12 col-md-6 col-lg-4 gy-3">
                     <div class="card text-center" style="width: 18rem;">
-                        <img src="./media/pexels-mikhail-nilov-7780771.jpg" class="card-img-top" alt="...">
+                        <img src="./static/media/welcome/pexels-mikhail-nilov-7780771.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <!-- <h5 class="card-title">Card title</h5> -->
                             <a href="#" class="btn btn-primary">Health Guidelines</a>
@@ -180,7 +74,7 @@
 
     <section class="common-section mb-5 pt-5 bg-color">
         <div class="container text-center common-title  ">
-            <h2 class="common-heading text-dark">Exercises for You</h2>
+            <h2 class="common-heading text-dark" id="exercise">Exercises for You</h2>
             <hr class="w-25 mx-auto">
         </div>
 
@@ -201,7 +95,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem; ">
-                                            <img alt="..." class="card-img-top" src="./media/chest.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/chest.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3 ">Chest</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -221,7 +115,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/biceps.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/biceps.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Biceps</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -241,7 +135,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/triceps.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/triceps.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Triceps</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -265,7 +159,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/shoulder.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/shoulder.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Shoulders</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -285,7 +179,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/back.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/back.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Back</p>
 
@@ -306,7 +200,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/leg.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/leg.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Legs</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -348,7 +242,7 @@
 
     <section class="common-section mb-5 pt-5 bg-color yog-bg pb-5">
         <div class="container text-center common-title  ">
-            <h2 class="common-heading text-dark">Yoga Asanas for You</h2>
+            <h2 class="common-heading text-dark"id="yoga">Yoga Asanas for You</h2>
             <hr class="w-25 mx-auto">
         </div>
 
@@ -369,7 +263,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 white_cardy" style="width: 18rem; ">
-                                            <img alt="..." class="card-img-top" src="./media/standing pose.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/standing pose.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3 ">Standing Pose</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -389,7 +283,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/sitting pose.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/sitting pose.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Sitting Pose</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -410,7 +304,7 @@
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 white_cardy" style="width: 18rem;">
                                             <img alt="..." class="card-img-top"
-                                                src="./media/laying on stomach pose.jpg">
+                                                src="/static/media/welcome/laying on stomach pose.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Laying_on_Stomach Pose</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -434,7 +328,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/laying on back.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/laying on back.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Laying_on_Back Pose</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -454,7 +348,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/balancing pose.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/balancing pose.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Balancing Pose</p>
 
@@ -475,7 +369,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/eyes pose.jpg">
+                                            <img alt="..." class="card-img-top" src="/static/media/welcome/eyes pose.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Eyes Pose</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -517,7 +411,7 @@
 
     <section class="common-section mb-5 pt-5 bg-color">
         <div class="container text-center common-title  ">
-            <h2 class="common-heading text-dark">Home Remedies for You</h2>
+            <h2 class="common-heading text-dark"id="home_remedies">Home Remedies for You</h2>
             <hr class="w-25 mx-auto">
         </div>
 
@@ -541,7 +435,7 @@
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem; ">
                                             <img alt="..." class="card-img-top"
-                                                src="./media/Home remedies/Common Cold.jpeg">
+                                                src="/static/media/Home remedies/Common Cold.jpeg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3 ">Common Cold</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -562,7 +456,7 @@
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
                                             <img alt="..." class="card-img-top"
-                                                src="./media/Home remedies/Headache.jpeg">
+                                                src="/static/media/Home remedies/Headache.jpeg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Headache</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -583,7 +477,7 @@
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
                                             <img alt="..." class="card-img-top"
-                                                src="./media/Home remedies/Obesity.jpeg">
+                                                src="/static/media/Home remedies/Obesity.jpeg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Obesity</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -608,7 +502,7 @@
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
                                             <img alt="..." class="card-img-top"
-                                                src="./media/Home remedies/Kidney Stone.jpeg">
+                                                src="/static/media/Home remedies/Kidney Stone.jpeg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Kidney Stone</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -629,7 +523,7 @@
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
                                             <img alt="..." class="card-img-top"
-                                                src="./media/Home remedies/Stomach Pain.jpeg">
+                                                src="/static/media/Home remedies/Stomach Pain.jpeg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Stomach Pain</p>
 
@@ -651,7 +545,7 @@
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
                                             <img alt="..." class="card-img-top"
-                                                src="./media/Home remedies/Muscle Ache.jpg">
+                                                src="/static/media/Home remedies/Muscle Ache.jpg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Muscle Ache</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -675,7 +569,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/Home remedies/Cough.jpeg">
+                                            <img alt="..." class="card-img-top" src="/static/media/Home remedies/Cough.jpeg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Cough</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -695,7 +589,7 @@
                                 <div class="d-flex justify-content-center align-items-center">
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="./media/Home remedies/Nausea.jpeg">
+                                            <img alt="..." class="card-img-top" src="/static/media/Home remedies/Nausea.jpeg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Nausea</p>
 
@@ -717,7 +611,7 @@
                                     <a href="https://www.google.co.in" style="text-decoration:none">
                                         <div class="card  p-3 cardy" style="width: 18rem;">
                                             <img alt="..." class="card-img-top"
-                                                src="./media/Home remedies/Malaria.jpeg">
+                                                src="/static/media/Home remedies/Malaria.jpeg">
                                             <div class="card-body text-center">
                                                 <p class="card-title  mb-3">Malaria</p>
                                                 <div class=" mt-3 d-flex justify-content-center">
@@ -759,14 +653,4 @@
 
 
 
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+    {% endblock body %}
