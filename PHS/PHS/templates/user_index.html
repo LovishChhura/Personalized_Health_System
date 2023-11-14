@@ -3,654 +3,661 @@
 {% block title %}User Dashboard{% endblock title %}
 
 {% block body %}
-   
-    <!-- hero section starts here -->
-    <section class="bs-main bg-color hero-section mt-0">
-        <div class="container">
-            <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card text-center" style="width: 18rem;">
-                        <img src="./static/media/welcome/9045622.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="/health_score" class="btn btn-primary">Health Assessment</a>
-                        </div>
+
+<!-- hero section starts here -->
+<section class="bs-main bg-color hero-section mt-0">
+    <div class="container">
+        <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="./static/media/welcome/9045622.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <a href="/health_score" class="btn btn-primary">Health Assessment</a>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 gy-3">
-                    <div class="card text-center" style="width: 18rem;">
-                        <img src="./static/media/welcome/pexels-photo-1431282.jpeg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="#exercise" class="btn btn-primary">Exercises</a>
-                        </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 gy-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="./static/media/welcome/pexels-photo-1431282.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <a href="#exercise" class="btn btn-primary">Exercises</a>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 gy-3">
-                    <div class="card text-center" style="width: 18rem;">
-                        <img src="./static/media/welcome/pexels-marta-wave-6454159.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="#yoga" class="btn btn-primary">Yoga Asanas</a>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 gy-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="./static/media/welcome/pexels-marta-wave-6454159.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <a href="#yoga" class="btn btn-primary">Yoga Asanas</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4 gy-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="./static/media/welcome/pexels-mikhail-nilov-6707511.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <a href="#home_remedies" class="btn btn-primary">Home Remedies</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 gy-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="./static/media/welcome/young-woman-suffering-from-headache.jpg" class="card-img-top"
+                        alt="...">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <a href="/reduce_stress" class="btn btn-primary">Reduce Stress</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 gy-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src="./static/media/welcome/pexels-mikhail-nilov-7780771.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <!-- <h5 class="card-title">Card title</h5> -->
+                        <a href="/health_guidelines" class="btn btn-primary">Health Guidelines</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- hero section end here -->
+
+<!-- exercise section starts here -->
+
+<section class="common-section mb-5 pt-5 bg-color">
+    <div class="container text-center common-title  ">
+        <h2 class="common-heading text-dark" id="exercise">Exercises for You</h2>
+        <hr class="w-25 mx-auto">
+    </div>
+
+
+    <div class="container">
+        <div class="carousel slide" data-bs-ride="true" id="carouselExampleIndicators">
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                    data-bs-target="#carouselExampleIndicators" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+                    type="button"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem; ">
+                                        <img alt="..." class="card-img-top" src="/static/media/welcome/chest.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3 ">Chest</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top" src="/static/media/welcome/biceps.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Biceps</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top" src="/static/media/welcome/triceps.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Triceps</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top" src="/static/media/welcome/shoulder.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Shoulders</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top" src="/static/media/welcome/back.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Back</p>
+
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top" src="/static/media/welcome/leg.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Legs</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-4 gy-3">
-                    <div class="card text-center" style="width: 18rem;">
-                        <img src="./static/media/welcome/pexels-mikhail-nilov-6707511.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="#home_remedies" class="btn btn-primary">Home Remedies</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 gy-3">
-                    <div class="card text-center" style="width: 18rem;">
-                        <img src="./static/media/welcome/young-woman-suffering-from-headache.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="/reduce_stress" class="btn btn-primary">Reduce Stress</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 gy-3">
-                    <div class="card text-center" style="width: 18rem;">
-                        <img src="./static/media/welcome/pexels-mikhail-nilov-7780771.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <!-- <h5 class="card-title">Card title</h5> -->
-                            <a href="/health_guidelines" class="btn btn-primary">Health Guidelines</a>
-                        </div>
-                    </div>
-                </div>
 
             </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators"
+                type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon left_arrow"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators"
+                type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon right_arrow"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-
-    </section>
-    <!-- hero section end here -->
-
-    <!-- exercise section starts here -->
-
-    <section class="common-section mb-5 pt-5 bg-color">
-        <div class="container text-center common-title  ">
-            <h2 class="common-heading text-dark" id="exercise">Exercises for You</h2>
-            <hr class="w-25 mx-auto">
-        </div>
+    </div>
 
 
-        <div class="container">
-            <div class="carousel slide" data-bs-ride="true" id="carouselExampleIndicators">
-                <div class="carousel-indicators">
-                    <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
-                        data-bs-target="#carouselExampleIndicators" type="button"></button>
-                    <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
-                        type="button"></button>
-                </div>
+</section>
 
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row g-4">
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem; ">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/chest.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3 ">Chest</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+<!-- exercise section end here -->
 
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/biceps.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Biceps</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
+<!-- Yoga section starts here  -->
 
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/triceps.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Triceps</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row g-4">
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/shoulder.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Shoulders</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/back.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Back</p>
-
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/leg.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Legs</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<section class="common-section mb-5 pt-5 bg-color yog-bg pb-5">
+    <div class="container text-center common-title  ">
+        <h2 class="common-heading text-dark" id="yoga">Yoga Asanas for You</h2>
+        <hr class="w-25 mx-auto">
+    </div>
 
 
-                </div>
-                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators"
-                    type="button">
-                    <span aria-hidden="true" class="carousel-control-prev-icon left_arrow"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators"
-                    type="button">
-                    <span aria-hidden="true" class="carousel-control-next-icon right_arrow"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+    <div class="container">
+        <div class="carousel slide" data-bs-ride="true" id="carouselExampleIndicators2">
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                    data-bs-target="#carouselExampleIndicators" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+                    type="button"></button>
             </div>
-        </div>
 
-
-    </section>
-
-    <!-- exercise section end here -->
-
-    <!-- Yoga section starts here  -->
-
-    <section class="common-section mb-5 pt-5 bg-color yog-bg pb-5">
-        <div class="container text-center common-title  ">
-            <h2 class="common-heading text-dark"id="yoga">Yoga Asanas for You</h2>
-            <hr class="w-25 mx-auto">
-        </div>
-
-
-        <div class="container">
-            <div class="carousel slide" data-bs-ride="true" id="carouselExampleIndicators2">
-                <div class="carousel-indicators">
-                    <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
-                        data-bs-target="#carouselExampleIndicators" type="button"></button>
-                    <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
-                        type="button"></button>
-                </div>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row g-4">
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 white_cardy" style="width: 18rem; ">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/standing pose.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3 ">Standing Pose</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 white_cardy" style="width: 18rem; ">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/welcome/standing pose.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3 ">Standing Pose</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
                                             </div>
                                         </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/sitting pose.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Sitting Pose</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top"
-                                                src="/static/media/welcome/laying on stomach pose.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Laying_on_Stomach Pose</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
 
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row g-4">
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/laying on back.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Laying_on_Back Pose</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 white_cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/welcome/sitting pose.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Sitting Pose</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
                                             </div>
                                         </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
                             </div>
+                        </div>
 
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/balancing pose.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Balancing Pose</p>
-
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 white_cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/welcome/laying on stomach pose.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Laying_on_Stomach Pose</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
                                             </div>
                                         </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 white_cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/welcome/eyes pose.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Eyes Pose</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
 
-
                 </div>
-                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators2"
-                    type="button">
-                    <span aria-hidden="true" class="carousel-control-prev-icon left_arrow"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators2"
-                    type="button">
-                    <span aria-hidden="true" class="carousel-control-next-icon right_arrow"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 white_cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/welcome/laying on back.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Laying_on_Back Pose</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 white_cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/welcome/balancing pose.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Balancing Pose</p>
+
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 white_cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top" src="/static/media/welcome/eyes pose.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Eyes Pose</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators2"
+                type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon left_arrow"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators2"
+                type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon right_arrow"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+    </div>
 
 
-    </section>
+</section>
 
-    <!-- Yoga section ends here  -->
+<!-- Yoga section ends here  -->
 
-    <!-- Home Remedies section starts here -->
+<!-- Home Remedies section starts here -->
 
-    <section class="common-section mb-5 pt-5 bg-color">
-        <div class="container text-center common-title  ">
-            <h2 class="common-heading text-dark"id="home_remedies">Home Remedies for You</h2>
-            <hr class="w-25 mx-auto">
-        </div>
-
-
-        <div class="container">
-            <div class="carousel slide" data-bs-ride="true" id="carouselExampleIndicators3">
-                <div class="carousel-indicators">
-                    <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
-                        data-bs-target="#carouselExampleIndicators" type="button"></button>
-                    <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
-                        type="button"></button>
-                    <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators"
-                        type="button"></button>
-                </div>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row g-4">
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem; ">
-                                            <img alt="..." class="card-img-top"
-                                                src="/static/media/Home remedies/Common Cold.jpeg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3 ">Common Cold</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top"
-                                                src="/static/media/Home remedies/Headache.jpeg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Headache</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top"
-                                                src="/static/media/Home remedies/Obesity.jpeg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Obesity</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row g-4">
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top"
-                                                src="/static/media/Home remedies/Kidney Stone.jpeg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Kidney Stone</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top"
-                                                src="/static/media/Home remedies/Stomach Pain.jpeg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Stomach Pain</p>
-
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top"
-                                                src="/static/media/Home remedies/Muscle Ache.jpg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Muscle Ache</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <div class="row g-4">
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/Home remedies/Cough.jpeg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Cough</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top" src="/static/media/Home remedies/Nausea.jpeg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Nausea</p>
-
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-xxl-4">
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <a href="https://www.google.co.in" style="text-decoration:none">
-                                        <div class="card  p-3 cardy" style="width: 18rem;">
-                                            <img alt="..." class="card-img-top"
-                                                src="/static/media/Home remedies/Malaria.jpeg">
-                                            <div class="card-body text-center">
-                                                <p class="card-title  mb-3">Malaria</p>
-                                                <div class=" mt-3 d-flex justify-content-center">
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="fa-solid fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<section class="common-section mb-5 pt-5 bg-color">
+    <div class="container text-center common-title  ">
+        <h2 class="common-heading text-dark" id="home_remedies">Home Remedies for You</h2>
+        <hr class="w-25 mx-auto">
+    </div>
 
 
-                </div>
-                <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators3"
-                    type="button">
-                    <span aria-hidden="true" class="carousel-control-prev-icon left_arrow"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators3"
-                    type="button">
-                    <span aria-hidden="true" class="carousel-control-next-icon right_arrow"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+    <div class="container">
+        <div class="carousel slide" data-bs-ride="true" id="carouselExampleIndicators3">
+            <div class="carousel-indicators">
+                <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0"
+                    data-bs-target="#carouselExampleIndicators" type="button"></button>
+                <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators"
+                    type="button"></button>
+                <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators"
+                    type="button"></button>
             </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row g-4">
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem; ">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Common Cold.jpeg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3 ">Common Cold</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Headache.jpeg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Headache</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Obesity.jpeg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Obesity</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Kidney Stone.jpeg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Kidney Stone</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Stomach Pain.jpeg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Stomach Pain</p>
+
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Muscle Ache.jpg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Muscle Ache</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-4">
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Cough.jpeg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Cough</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Nausea.jpeg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Nausea</p>
+
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xxl-4">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <a href="https://www.google.co.in" style="text-decoration:none">
+                                    <div class="card  p-3 cardy" style="width: 18rem;">
+                                        <img alt="..." class="card-img-top"
+                                            src="/static/media/Home remedies/Malaria.jpeg">
+                                        <div class="card-body text-center">
+                                            <p class="card-title  mb-3">Malaria</p>
+                                            <div class=" mt-3 d-flex justify-content-center">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators3"
+                type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon left_arrow"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators3"
+                type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon right_arrow"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+    </div>
 
 
-    </section>
+</section>
 
-    <!-- Home Remedies section end here -->
-
-
+<!-- Home Remedies section end here -->
 
 
 
-    {% endblock body %}
+
+
+{% endblock body %}
