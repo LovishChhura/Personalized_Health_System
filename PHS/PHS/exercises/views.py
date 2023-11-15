@@ -7,6 +7,7 @@ def index(request):
     return redirect('/#exercise')
 
 def exercise_view(request, exercise_name):
+    # print(exercise_name)
     # Now, exercise_name contains the part of the URL after '/exercise/'
     # You can use it as needed
     # Filter the DataFrame to get rows where the specified column matches the target category
@@ -14,14 +15,14 @@ def exercise_view(request, exercise_name):
     # Specify the number of random rows you want to select
     num_random_rows = 4  # Adjust this number as needed
     # Get random rows from the filtered DataFrame
-    random_rows = filtered_df.sample(n=num_random_rows)
+    random_rows = filtered_df.sample(n=num_random_rows,replace=True)
     filtered_df2 = df[(df[exercise_name] == 1) & (df['Advanced'] == 1)]
-    random_rows2 = filtered_df2.sample(n=num_random_rows)
+    random_rows2 = filtered_df2.sample(n=num_random_rows,replace=True)
     
     beginner = [{'name': i, 'link': j, 'image': f'/static/media/FULL_GYM/{i.lower()}.jpg'} for i, j in zip(random_rows.Exercise.to_list(), random_rows.Links.to_list())]
     advance = [{'name': i, 'link': j, 'image': f'/static/media/FULL_GYM/{i.lower()}.jpg'} for i, j in zip(random_rows2.Exercise.to_list(), random_rows2.Links.to_list())]
     
-    print(f'beginner is {beginner}, advance is {advance}')
+    # print(f'beginner is {beginner}, advance is {advance}')
     # namelist=[]
     # linklist=[]
     # namelist.extend(random_rows.Exercise.to_list())
