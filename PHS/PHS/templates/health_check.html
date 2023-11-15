@@ -1,123 +1,19 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PHS Health Score</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="./user-style.css">
-</head>
+{% block title %}User Dashboard{% endblock title %}
 
-<body>
-    <!-- Adding navbar here -->
-    <nav class="navo navbar navbar-expand-lg ">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/"><b>PHS</b></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/health_check">Health Score</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Exercises
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Chest</a></li>
-                            <li><a class="dropdown-item" href="#">Biceps</a></li>
-                            <li><a class="dropdown-item" href="#">Triceps</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Shoulders</a></li>
-                            <li><a class="dropdown-item" href="#">Back</a></li>
-                            <li><a class="dropdown-item" href="#">Legs</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Yoga Asanas
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Standing Asanas</a></li>
-                            <li><a class="dropdown-item" href="#">Sitting Asanas</a></li>
-                            <li><a class="dropdown-item" href="#">Laying_on_Stomach Asanas</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Laying_on_Back Asanas</a></li>
-                            <li><a class="dropdown-item" href="#">Balancing Asanas</a></li>
-                            <li><a class="dropdown-item" href="#">Eyes Asanas</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Home Remedies
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Common Cold</a></li>
-                            <li><a class="dropdown-item" href="#">Headache</a></li>
-                            <li><a class="dropdown-item" href="#">Obesity</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Kidney Stone</a></li>
-                            <li><a class="dropdown-item" href="#">Stomach Pain</a></li>
-                            <li><a class="dropdown-item" href="#">Muscle Ache</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Cough</a></li>
-                            <li><a class="dropdown-item" href="#">Nausea</a></li>
-                            <li><a class="dropdown-item" href="#">Malaria</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Reduce Stress</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Health Guidelines</a>
-                    </li>
+{% block body %}
 
-
-
-                </ul>
-                <span class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Setting
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Account Setting</a></li>
-                        <li><a class="dropdown-item" href="#">Log Out</a></li>
-                    </ul>
-                </span>
-            </div>
-        </div>
-    </nav>
-    <!-- navbar ends here -->
-
-    <!-- hero section starts here -->
-    <section class="bs-main bg-color hero-section mt-0">
-        <div class="container formy">
-            <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
-                <form id="health_form" method="post" action="/health_index">
+<!-- hero section starts here -->
+<section class="bs-main bg-color hero-section mt-0">
+    <div class="container formy">
+        <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
+            <div class="col-12 col-md-6 col-lg-6">
+                <form id="health_form" method="post" action="/health_score/health_index">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="tempF">Body Temperature:</label>
-                        <input type="text" class="form-control" id="tempF" name="tempF"required>
+                        <input type="text" class="form-control" id="tempF" name="tempF" required>
                     </div>
                     <div class="form-group">
                         <label for="pulse">Body Pulse:</label>
@@ -137,56 +33,94 @@
                     </div>
                     <div class="form-group">
                         <label for="popct">Body Oxygen:</label>
-                        <input type="text" class="form-control" id="popct" name="popct" aria-describedby="emailHelp" required>
+                        <input type="text" class="form-control" id="popct" name="popct" aria-describedby="emailHelp"
+                            required>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone
                             else.</small>
                     </div>
 
-                    <button type="submit" class="btn btn-primary" data-toggle="modal"
-                        data-target="#exampleModal" onclick="submitForm()">Submit</button>
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                        onclick="submitForm()">Submit</button>
                 </form>
+            </div>
+
+            {% if score == 0 %}
+            <div class="col-12 col-md-6 col-lg-6 ">
+                <div class="container score_box mx-5 px-2 py-2"
+                    style="border: 2px solid #000; border-radius: 5px; background-color: var(--bs-main-color);">
+                    <h5>Your health Score: <b>{{score}}</b></h5>
+                    <p>Health status: <u style="color: green;">{{status}}</u></p>
+                </div>
+
+            {% elif myvar == 1 %}
+            <div class="col-12 col-md-6 col-lg-6 ">
+                <div class="container score_box mx-5 px-2 py-2"
+                    style="border: 2px solid #000; border-radius: 5px; background-color: var(--bs-main-color);">
+                    <h5>Your health Score: <b>{{score}}</b></h5>
+                    <p>Health status: <u style="color: yellow;">{{status}}</u></p>
+                </div>
+                {% elif myvar == 2 %}
+                <div class="col-12 col-md-6 col-lg-6 ">
+                    <div class="container score_box mx-5 px-2 py-2"
+                        style="border: 2px solid #000; border-radius: 5px; background-color: var(--bs-main-color);">
+                        <h5>Your health Score: <b>{{score}}</b></h5>
+                        <p>Health status: <u style="color: orange;">{{status}}</u></p>
+                    </div>
+            {% else %}
+            <div class="col-12 col-md-6 col-lg-6 ">
+                <div class="container score_box mx-5 px-2 py-2"
+                    style="border: 2px solid #000; border-radius: 5px; background-color: var(--bs-main-color);">
+                    <h5>Your health Score: <b>{{score}}</b></h5>
+                    <p>Health status: <u style="color: red;">{{status}}</u></p>
+                </div>
+
+            {% endif %}
+
+            <!-- <div class="col-12 col-md-6 col-lg-6 ">
+                <div class="container score_box mx-5 px-2 py-2"
+                    style="border: 2px solid #000; border-radius: 5px; background-color: var(--bs-main-color);">
+                    <h5>Your health Score: <b>{{score}}</b></h5>
+                    <p>Health status:</p>
+                </div> -->
 
             </div>
+
         </div>
+    </div>
 
-    </section>
+</section>
 
-    <!-- hero section end here -->
+<!-- hero section end here -->
 
-    <!--Modal starts here-->
-    <!-- Modal -->
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+<!--Modal starts here-->
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     </div>
-    <!-- Modal Ends here -->
+</div>
+<!-- Modal Ends here -->
 
 
-    <script>
-         function submitForm() {
-      // Here you can add the logic to handle form submission
-      // For this example, we'll just show the success modal
-      $('#exampleModal').modal('show');
+<script>
+    function submitForm() {
+        // Here you can add the logic to handle form submission
+        // For this example, we'll just show the success modal
+        $('#exampleModal').modal('show');
     }
-    </script>
+</script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+{% endblock body %}

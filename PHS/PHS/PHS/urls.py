@@ -23,4 +23,5 @@ admin.site.index_title = "Welcome to PHS"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
+    path('health_score/',include('health_score.urls')),
 ]
