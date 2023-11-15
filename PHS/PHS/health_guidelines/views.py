@@ -1,3 +1,27 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
+import requests
+from datetime import date
+from datetime import timedelta
+
+today = date.today() # or you can do today = date.today() for today's date
+# today = date(2014, 10, 9)
+weekdate=str(today-timedelta(days=7))
+
+response=requests.get('https://newsapi.org/v2/top-headlines?country=in&category=health&from={weekdate}&sortBy=publishedAt&apiKey=64f00867b3db40f79eb479d459468b84')
 
 # Create your views here.
+def index(request):
+    mydict=response.json()
+    article=[]
+    for i in range(3):
+        article1=mydict['articles'][i]
+        author=article1['author']
+        title=article1['title'][:100]+"..."
+        desc=article1['description'][:150]+"..."
+        dateofpub=article1['publishedAt'][:10]
+        url=article1['url']
+        urlImg=article1['urlToImage']
+        art={'author':author,'title':title,'desc':desc,'dateofpub':dateofpub,'url':url,'urlImg':urlImg}
+        article.append(art)
+    return render(request,'health_guidelines.html',{'article':article})
+
