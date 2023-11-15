@@ -26,4 +26,5 @@ urlpatterns = [
     path('health_score/',include('health_score.urls')),
     path('exercise/',include('exercises.urls')),
     path('yoga/',include('yoga.urls')),
+    path('home_remedies/',include('home_remedies.urls')),
 ]
