@@ -16,8 +16,8 @@ def index(request):
     for i in range(3):
         article1=mydict['articles'][i]
         author=article1['author']
-        title=article1['title'][:100]+"..."
-        desc=article1['description'][:150]+"..."
+        title=article1['title']
+        desc=article1['description']
         dateofpub=article1['publishedAt'][:10]
         url=article1['url']
         urlImg=article1['urlToImage']
