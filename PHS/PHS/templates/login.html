@@ -16,9 +16,19 @@
                 <div class="wrapper">
                     <div class="form signup">
                         <header>Signup</header>
-                        <form id="user_signup" action="#">
+                        <form id="user_signup" action="/register/" method="POST">
                             {% csrf_token %}
-                            <input type="text" placeholder="Full name" id="full_name" name="full_name" required />
+                            {% if messages %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {% for message in messages %}
+                                {{ message }}
+                                {% endfor %}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            {% endif %}
+                            <input type="text" placeholder="First name" id="first_name" name="first_name" required />
+                            <input type="text" placeholder="Last name" id="last_name" name="last_name" required />
                             <input type="text" placeholder="Email address" id="email" name="email" required />
                             <input type="password" placeholder="Password" id="password" name="password" required />
                             <div class="checkbox">
@@ -30,8 +40,17 @@
                     </div>
                     <div class="form login">
                         <header>Login</header>
-                        <form id="user_login" action="#">
+                        <form id="user_login" action="/login/" method="POST">
                             {% csrf_token %}
+                            {% if messages %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {% for message in messages %}
+                                {{ message }}
+                                {% endfor %}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            {% endif %}
                             <input type="text" placeholder="Email address" id="email" name="email" required />
                             <input type="password" placeholder="Password" id="password" name="password" required />
                             <a href="#">Forgot password?</a>
