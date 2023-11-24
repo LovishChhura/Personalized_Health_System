@@ -26,11 +26,28 @@
             {%for i in article%}
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="card healthcard text-center" style="width: 18rem;">
+                    {% if i.urlImg == None %}
+                    <img src="/static/media/health guidelines/aditya-romansa.jpg" class="card-img-top" alt="..."
+                        height='150px' width="150px">
+                    {% else %}
                     <img src="{{i.urlImg}}" class="card-img-top" alt="..." height='150px' width="150px">
+                    {% endif %}
                     <div class="card-body">
+                        {% if i.title == None %}
+                        <h4 class="card-title">PHS health Guidelines</h4>
+                        {% else %}
                         <h4 class="card-title">{{i.title}}</h4>
+                        {% endif %}
+                        {% if i.desc == None %}
+                        <p class="card-text">------</p>
+                        {% else %}
                         <p class="card-text">{{i.desc}}</p>
+                        {% endif %}
+                        {% if i.url == None %}
+                        <a href="/health_guidelines" class="btn btn-primary" target="_blank">Read More -></a><br />
+                        {% else %}
                         <a href="{{i.url}}" class="btn btn-primary" target="_blank">Read More -></a><br />
+                        {% endif %}
                         <p> <b>Author: </b><i>{{i.author}}</i> </p>
                         <p><b>Date:</b> <i>{{i.dateofpub}}</i></p>
                     </div>
