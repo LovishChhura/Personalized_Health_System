@@ -1,0 +1,66 @@
+{% extends 'H_base.html' %}
+
+{% block title %}Login{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="/static/css/auth.css">
+<link rel="stylesheet" href="/static/css/user-style.css">
+{% endblock css %}
+{% block body %}
+
+
+<!-- hero section starts here -->
+<section class="bs-main bg-color hero-section mt-0">
+    <div class="container formy">
+        <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
+            <div class="col-12 col-md-6 col-lg-11">
+                <div class="wrapper">
+                    <div class="form signup">
+                        <header>Signup</header>
+                        <form id="user_signup" action="#">
+                            {% csrf_token %}
+                            <input type="text" placeholder="Full name" id="full_name" name="full_name" required />
+                            <input type="text" placeholder="Email address" id="email" name="email" required />
+                            <input type="password" placeholder="Password" id="password" name="password" required />
+                            <div class="checkbox">
+                                <input type="checkbox" id="signupCheck" />
+                                <label for="signupCheck">I accept all terms & conditions</label>
+                            </div>
+                            <input type="submit" value="Signup" />
+                        </form>
+                    </div>
+                    <div class="form login">
+                        <header>Login</header>
+                        <form id="user_login" action="#">
+                            {% csrf_token %}
+                            <input type="text" placeholder="Email address" id="email" name="email" required />
+                            <input type="password" placeholder="Password" id="password" name="password" required />
+                            <a href="#">Forgot password?</a>
+                            <input type="submit" value="Login" />
+                        </form>
+                    </div>
+                    <script>
+                        const wrapper = document.querySelector(".wrapper"),
+                            signupHeader = document.querySelector(".signup header"),
+                            loginHeader = document.querySelector(".login header");
+                        loginHeader.addEventListener("click", () => {
+                            wrapper.classList.add("active");
+                        });
+                        signupHeader.addEventListener("click", () => {
+                            wrapper.classList.remove("active");
+                        });
+                    </script>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-1">
+                <img src="/static/media/auth/pexels-antoni-shkraba-5215024HD.png" width="400px" height="580px">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- hero section end here -->
+
+
+{% endblock body %}
