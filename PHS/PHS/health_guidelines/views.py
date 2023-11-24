@@ -1,4 +1,5 @@
 from django.shortcuts import render,HttpResponse
+from django.contrib.auth.decorators import login_required
 import requests
 from datetime import date
 from datetime import timedelta
@@ -10,6 +11,7 @@ weekdate=str(today-timedelta(days=7))
 response=requests.get('https://newsapi.org/v2/top-headlines?country=in&category=health&from={weekdate}&sortBy=publishedAt&apiKey=64f00867b3db40f79eb479d459468b84')
 
 # Create your views here.
+@login_required(login_url="/login/")
 def index(request):
     mydict=response.json()
     article=[]

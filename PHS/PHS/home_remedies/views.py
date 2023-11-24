@@ -1,11 +1,14 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.decorators import login_required
 import pandas as pd
 
 df=pd.read_excel("./datasets/PHS_home_remedies_data.xlsx")
 # Create your views here.
+@login_required(login_url="/login/")
 def index(request):
     return redirect('/#home_remedies')
 
+@login_required(login_url="/login/")
 def home_remedies_view(request, home_remedies):
     if home_remedies=="common_cold":
         hr="Common Cold"

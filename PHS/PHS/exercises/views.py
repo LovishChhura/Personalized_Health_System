@@ -1,11 +1,14 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.decorators import login_required
 import pandas as pd
 
 df=pd.read_excel("./datasets/PHS_exercise_data.xlsx")
 # Create your views here.
+@login_required(login_url="/login/")
 def index(request):
     return redirect('/#exercise')
 
+@login_required(login_url="/login/")
 def exercise_view(request, exercise_name):
     # print(exercise_name)
     # Now, exercise_name contains the part of the URL after '/exercise/'

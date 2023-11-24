@@ -1,11 +1,14 @@
 from django.shortcuts import render,redirect
+from django.contrib.auth.decorators import login_required
 import pandas as pd
 
 df=pd.read_excel("./datasets/final_asan1_1.xlsx")
 # Create your views here.
+@login_required(login_url="/login/")
 def index(request):
     return redirect('/#yoga')
 
+@login_required(login_url="/login/")
 def yoga_view(request, yoga_name):
     L1="Beginners"
     L2="Intermediate"

@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from joblib import load
 # import pandas as pd
 
 modal=load('./models/health_score.joblib')
 # Create your views here.
+@login_required(login_url="/login/")
 def index(request):
     return render(request,'health_check.html')
 

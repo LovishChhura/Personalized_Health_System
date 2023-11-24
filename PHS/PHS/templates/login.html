@@ -1,4 +1,4 @@
-{% extends 'H_base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Login{% endblock title %}
 {% block css %}
@@ -18,19 +18,24 @@
                         <header>Signup</header>
                         <form id="user_signup" action="/register/" method="POST">
                             {% csrf_token %}
-                            {% if messages %}
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                {% for message in messages %}
-                                {{ message }}
-                                {% endfor %}
+                            {% if from == "signup" %}
+                            {%if info == "success" %}
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{message}}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
                             </div>
+                            {%else%}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            {%endif%}
                             {% endif %}
-                            <input type="text" placeholder="First name" id="first_name" name="first_name" required />
-                            <input type="text" placeholder="Last name" id="last_name" name="last_name" required />
-                            <input type="text" placeholder="Email address" id="email" name="email" required />
-                            <input type="password" placeholder="Password" id="password" name="password" required />
+                            <input type="text" placeholder="Full name" id="full_name" name="full_name" required />
+                            <input type="text" placeholder="Username" id="usernameS" name="usernameS" required />
+                            <input type="password" placeholder="Password" id="passwordS" name="passwordS" required />
                             <div class="checkbox">
                                 <input type="checkbox" id="signupCheck" />
                                 <label for="signupCheck">I accept all terms & conditions</label>
@@ -42,22 +47,24 @@
                         <header>Login</header>
                         <form id="user_login" action="/login/" method="POST">
                             {% csrf_token %}
-                            {% if messages %}
+                            {% if from == "login" %}
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                {% for message in messages %}
                                 {{ message }}
-                                {% endfor %}
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
                             </div>
                             {% endif %}
-                            <input type="text" placeholder="Email address" id="email" name="email" required />
-                            <input type="password" placeholder="Password" id="password" name="password" required />
+                            <input type="text" placeholder="Username" id="usernameL" name="usernameL" required />
+                            <input type="password" placeholder="Password" id="passwordL" name="passwordL" required />
                             <a href="#">Forgot password?</a>
                             <input type="submit" value="Login" />
                         </form>
                     </div>
+                    {% comment %} <h3>{{from}}</h3> {% endcomment %}
+                    {{ from|json_script:"hello-data" }}
                     <script>
+                        // {% comment %} console.log('from 1 ', hello-data) {% endcomment %}
+                        const data = JSON.parse(document.getElementById('hello-data').textContent);
                         const wrapper = document.querySelector(".wrapper"),
                             signupHeader = document.querySelector(".signup header"),
                             loginHeader = document.querySelector(".login header");
@@ -67,6 +74,14 @@
                         signupHeader.addEventListener("click", () => {
                             wrapper.classList.remove("active");
                         });
+                        // console.log('data ', data)
+                        if (data == 'login') {
+                            wrapper.classList.add("active");
+                        }
+                        if (data == 'signup') {
+                            wrapper.classList.remove("active");
+                        }
+
                     </script>
                 </div>
             </div>
