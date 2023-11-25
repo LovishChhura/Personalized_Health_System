@@ -26,7 +26,9 @@ def health_index(request):
             status="Fine"
         elif pred[0]==2:
             status=="Need Care"
+        elif pred[0]==3:
+            status=="Medical Attention Needed"
         else:
-            status="Medical Attention Needed"
+            status=""
         params={"score":pred[0],"status":status}
     return render(request,'health_check.html',params)

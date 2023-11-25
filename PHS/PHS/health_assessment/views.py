@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -46,14 +46,15 @@ def gr1(request):
         level=request.POST.get('mgdlGR')
         level=float(level)
         if level<140:
-            bs='normal'
+            bs='Normal'
         elif level>=140 and level <199:
-            bs='prediabetic'
+            bs='Prediabetic'
         elif level >=200:
-            bs="diabetic"           
+            bs="Diabetic"           
         else:
             bs=""
         return render(request,"health_assessment.html",{'status1':bs,'level':level})
+        
               
     return render(request,'health_assessment.html')
 
