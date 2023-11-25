@@ -13,6 +13,10 @@ def index(request):
 def reduce_stress(request):
     return render(request,'reduce_stress.html')
 
+@login_required(login_url="/login/")
+def diet_plan(request):
+    return render(request,'diet_plan.html')
+
 # def home(request):
 #     return render(request,'home.html')
 

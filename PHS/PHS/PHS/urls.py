@@ -28,4 +28,5 @@ urlpatterns = [
     path('yoga/',include('yoga.urls')),
     path('home_remedies/',include('home_remedies.urls')),
     path('health_guidelines/',include('health_guidelines.urls')),
+    path('health_assessments/',include('health_assessment.urls')),
 ]

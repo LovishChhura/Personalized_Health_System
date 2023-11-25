@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'yoga.apps.YogaConfig',
     'home_remedies.apps.HomeRemediesConfig',
     'health_guidelines.apps.HealthGuidelinesConfig',
+    'health_assessment.apps.HealthAssessmentConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
