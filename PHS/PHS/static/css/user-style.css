@@ -132,7 +132,11 @@ h5.hremt {
 
 /*Health Guidelines*/
 
-
+/* Healthy Tips */
+.htip{
+    border: 2px solid #000;
+    border-radius: 5px;
+}
 /* for number inputs */
 /* Remove up and down arrows from number input */
 input[type="number"]::-webkit-inner-spin-button,
