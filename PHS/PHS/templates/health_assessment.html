@@ -5,6 +5,16 @@
 <link rel="stylesheet" href="/static/css/features.css">
 <link rel="stylesheet" href="/static/css/user-style.css">
 {% endblock css %}
+{% block style %}
+<style>
+    /* Remove up and down arrows from number input */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+{% endblock style %}
 {% block body %}
 
 <!-- PHS Exercises starts here -->
@@ -32,13 +42,15 @@
         <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
             <div class="col-12 col-md-6 col-lg-6">
                 <form id="bmi_form" action="/health_assessments/bmi" method="POST">
+                    {% csrf_token %}
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Height (cms)</label>
-                        <input type="text" class="form-control" id="height" name="height" required>
+                        <input type="number" step="0.01" class="form-control" id="height" name="height" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Weight (kgs)</label>
-                        <input type="text" class="form-control" id="weight" name="weight" aria-describedby="emailHelp" required>
+                        <input type="number" step="0.01" class="form-control" id="weight" name="weight"
+                            aria-describedby="emailHelp" required>
                         <div id="emailHelp" class="form-text">Please provide input in numeric form only.</div>
                     </div>
                     <button type="submit" class="btn btn-primary sbtn">Submit</button>
@@ -48,8 +60,26 @@
             <div class="col-12 col-md-6 col-lg-6 ">
                 <div class="container score_box mx-md-5 px-2 py-2 text-center"
                     style="border: 2px solid #000; border-radius: 5px; background-color: var(--bs-main-color);">
-                    <h5>Your BMI Score: <b>3</b></h5>
-                    <p>BMI status: <u style="color: green;">{{status}}</u></p>
+                    <h5>Your BMI Score: <b>{{score}}</b></h5>
+                    {% if Fscore < 16 %} <p>BMI status: <u style="color: red;">{{statusB}}</u></p>
+                        {% elif Fscore >= 16 and Fscore < 17 %} <p>BMI status: <u style="color: orange;">{{statusB}}</u>
+                            </p>
+                            {% elif Fscore >= 17 and Fscore < 18.5 %} <p>BMI status: <u
+                                    style="color: yellow;">{{statusB}}</u></p>
+                                {% elif Fscore >= 18.5 and Fscore < 25 %} <p>BMI status: <u
+                                        style="color: green;">{{statusB}}</u></p>
+                                    {% elif Fscore >= 25 and Fscore < 30 %} <p>BMI status: <u
+                                            style="color: yellow;">{{statusB}}</u></p>
+                                        {% elif Fscore >= 30 and Fscore < 35 %} <p>BMI status: <u
+                                                style="color: orange;">{{statusB}}</u></p>
+                                            {% elif Fscore >= 35 and Fscore < 40 %} <p>BMI status: <u
+                                                    style="color: red;">{{statusB}}</u></p>
+                                                {% elif Fscore >= 40 %}
+                                                <p>BMI status: <u style="color: red;">{{statusB}}</u></p>
+                                                {% else %}
+                                                <p>BMI status: <u style="color: green;">{{statusB}}</u></p>
+                                                {% endif %}
+
 
                 </div>
 
@@ -74,9 +104,11 @@
         <div class="row mt-0 mb-5 pt-2 pb-5 gy-3">
             <div class="col-12 col-md-6 col-lg-6">
                 <form id="mg-dl_form" action="/health_assessments/gr1" method="POST">
+                    {% csrf_token %}
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Glucometer Readings (mg/dL)</label>
-                        <input type="text" class="form-control" id="mgdlGR" name="mgdlGR" aria-describedby="emailHelp" required>
+                        <input type="text" class="form-control" id="mgdlGR" name="mgdlGR" aria-describedby="emailHelp"
+                            required>
                         <div id="emailHelp" class="form-text">Please provide input in numeric form only.</div>
                     </div>
                     <button type="submit" class="btn btn-primary sbtn">Submit</button>
@@ -87,8 +119,8 @@
                 <form id="mmol-l_form" action="/health_assessments/gr2" method="POST">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Glucometer Readings (mmol/L)</label>
-                        <input type="text" class="form-control" id="mmollGR" name="mmollGR"
-                            aria-describedby="emailHelp" required>
+                        <input type="text" class="form-control" id="mmollGR" name="mmollGR" aria-describedby="emailHelp"
+                            required>
                         <div id="emailHelp" class="form-text">Please provide input in numeric form only.</div>
                     </div>
                     <button type="submit" class="btn btn-primary sbtn">Submit</button>
@@ -98,8 +130,16 @@
             <div class="col-12 col-md-6 col-lg-6 ">
                 <div class="container score_box mx-md-5 px-2 py-2 text-center"
                     style="border: 2px solid #000; border-radius: 5px; background-color: var(--bs-main-color);">
-                    <h5>Diabetes status: <b><u style="color: green;">{{status}}</u></b></h5>
-
+                    {% if level < 140 %}
+                    <h5>Diabetes status: <b><u style="color: green;">{{status1}}</u></b></h5>
+                    {% elif level >= 140 and level < 199 %}
+                    <h5>Diabetes status: <b><u style="color: orange;">{{status1}}</u></b></h5>
+                    {% elif level >= 200 %}
+                    <h5>Diabetes status: <b><u style="color: red;">{{status1}}</u></b></h5>
+                    {% else %}
+                    <h5>Diabetes status: <b><u style="color: green;">{{status1}}</u></b></h5>
+                    {% endif %}
+                    
                 </div>
 
             </div>

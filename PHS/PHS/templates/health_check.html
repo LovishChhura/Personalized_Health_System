@@ -1,7 +1,16 @@
 {% extends 'base.html' %}
 
 {% block title %}Health Score{% endblock title %}
-
+{% block style %}
+<style>
+/* Remove up and down arrows from number input */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+</style>
+{% endblock style %}
 {% block body %}
 
 <!-- hero section starts here -->
@@ -13,27 +22,27 @@
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="tempF">Body Temperature:</label>
-                        <input type="text" class="form-control" id="tempF" name="tempF" required>
+                        <input type="number" step="0.01" class="form-control" id="tempF" name="tempF" required>
                     </div>
                     <div class="form-group">
                         <label for="pulse">Body Pulse:</label>
-                        <input type="text" class="form-control" id="pulse" name="pulse" required>
+                        <input type="number" step="0.01" class="form-control" id="pulse" name="pulse" required>
                     </div>
                     <div class="form-group">
                         <label for="respr">Respiration Rate:</label>
-                        <input type="text" class="form-control" id="respr" name="respr" required>
+                        <input type="number" step="0.01" class="form-control" id="respr" name="respr" required>
                     </div>
                     <div class="form-group">
                         <label for="bpsys">Bystolic BP:</label>
-                        <input type="text" class="form-control" id="bpsys" name="bpsys" required>
+                        <input type="number" step="0.01" class="form-control" id="bpsys" name="bpsys" required>
                     </div>
                     <div class="form-group">
                         <label for="bpdia">Diastolic BP:</label>
-                        <input type="text" class="form-control" id="bpdia" name="bpdia" required>
+                        <input type="number" step="0.01" class="form-control" id="bpdia" name="bpdia" required>
                     </div>
                     <div class="form-group">
                         <label for="popct">Body Oxygen:</label>
-                        <input type="text" class="form-control" id="popct" name="popct" aria-describedby="emailHelp"
+                        <input type="number" step="0.01" class="form-control" id="popct" name="popct" aria-describedby="emailHelp"
                             required>
                         <small id="emailHelp" class="form-text text-muted">Disclaimer: This AI model provides general information and should not be considered a substitute for professional advice; use it at your own discretion.</small>
                     </div>
@@ -56,8 +65,11 @@
                     {% elif myvar == 2 %}
                     <h5>Your Health Score: <b>1</b></h5>
                     <p>Health status: <u style="color: orange;">{{status}}</u></p>
-                    {% else %}
+                    {% elif myvar == 3 %}
                     <h5>Your Health Score: <b>0</b></h5>
+                    <p>Health status: <u style="color: red;">{{status}}</u></p>
+                    {% else %}
+                    <h5>Your Health Score: </h5>
                     <p>Health status: <u style="color: red;">{{status}}</u></p>
                     {% endif %}
                 </div>
